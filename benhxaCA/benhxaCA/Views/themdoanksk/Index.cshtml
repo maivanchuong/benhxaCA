@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Thêm đơn vị khám sức khỏe định kỳ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <style>
+        .panel_title{
+            width: 1000px;
+            color:white;
+            margin-bottom: 10px;
+            background-color: blue;
+            height: 20px;
+        }
+        .center_content{
+            border: 1px solid blue;
+            width: 1000px;
+            margin-left: 180px;
+        }
+        .button_shadow{
+            background-color:green;
+            padding: 5px 10px;
+            color: white;
+            width: 110px;
+            border: 0px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        #danhsachdotkham {
+            width: 1000px;
+            margin-left: 180px;
+        }
+        input,select {
+            background-color: aqua;
+            border: none;
+            height: 30px;
+            border-radius: 0.1cm;
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    @section scripts{
+        <script src="~/Scripts/themdoanksk/index.js"></script>
+    <script>
+        var themdoankskcontroller = new themdoankskcontroller();
+        themdoankskcontroller.init();
+    </script>
+        }
+</head>
+<body>
+    <div id="panelwrap">
+        <div class="center_content">
+            <div class="panel_with_title">
+                <div class="panel_title" style="font-size:medium; font-weight:bold"><b>Đơn vị khám sức khỏe định kỳ</b></div>
+                <div class="panel_body">
+                    <form method="post" action="" id="themdotkham" name="themdotkham" class="themdotkham">
+                        <table width="762" border="0" align="center">
+
+                            <tr>
+
+                                <td width="130">Đơn vị được khám: <input name="lankham" type="hidden" id="lankham" /></td>
+
+                                <td width="329" colspan="2">
+                                    <select name="donviduockham" class="width100per" id="donviduockham" style="width: 100%;">
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <option>@item</option> // de test thu 
+                                        }
+
+                                    </select>
+                                </td>
+                                <td width="127">Ngày khám: </td>
+                                <td width="158"><input name="ngaykham" type="date" class="width100per" id="ngaykham" data-inputmask="'alias': 'date'" style="width: 100%;" placeholder="dd/mm/yyyy"></td>
+                            </tr>
+                            <tr>
+                                <td>Loại khám:</td>
+                                <td><input name="loaikham" type="radio" value="Khám sức khỏe định kỳ" checked="checked" class="loaikham" id="loaikham" style="height:10px"/>Khám định kỳ</td>
+                                <td><input name="loaikham" type="radio" value="Khám sức khỏe tự phát" class="loaikham" id="loaikham" style="height:10px" />Khám tự phát</td>
+                            </tr>
+                            <tr>
+                                <td>Ghi chú: </td>
+                                <td colspan="3"><input name="ghichu" type="text" class="width100per" id="ghichu" style="width: 100%;" placeholder="Nhập nội dung ghi chú nếu có"></td>
+                            </tr>
+                            <tr id="canbo"></tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    @*<input type="button" name="them" id="them" value="Thêm" class="button_shadow"/>
+                                    <input type="button" name="hienthi" id="hienthi" value="Hiện danh sách" class="button_shadow" />
+                                    <input type="reset" name="huy" id="huy" value="Làm mới" class="button_shadow" />*@
+                                    <button name="them" id="them" class="button_shadow">Thêm</button>
+                                    <button name="hienthi" id="hienthi" class="button_shadow">Hiển thị </button>
+                                    <input type="reset" name="huy" id="huy" value="Làm mới" class="button_shadow" />
+                                </td> 
+                            </tr>
+                        </table> 
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="danhsachdotkham">
+        @*@Html.Action("danhsachdotkham")*@
+    </div>
+</body>

@@ -1,0 +1,44 @@
+﻿@model List<benhxaCA.Models.dotkhamsuckhoe>
+
+<div class="modal fade" id="view" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="modal-task">
+    <div class="modal-dialog modal-lg" role="document" style="width:auto;height:auto;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table style="border-collapse:collapse;border-color:blue;width:100%;height:100%" border="1" align="center">
+                            <tr>
+                                <th colspan="6" style="text-align: center; background-color:blue; color:white;">
+                                    Danh sách đợt khám sức khỏe
+                                </th>
+                            </tr>
+                            <tr style="background-color:darkslategrey;color:white;">
+                                <th>Số thứ tự</th>
+                                <th>Ngày khám</th>
+                                <th>Mã đơn vị</th>
+                                <th>Loại khám</th>
+                                <th>Mã cán bộ (Khám tự phát)</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr style="border-color:blue;color:black;">
+                                    <td style="border-color:blue;color:black;">@item.dksk_stt</td>
+                                    <td style="border-color:blue;color:black;">@item.dksk_ngaykham</td>
+                                    <td style="border-color:blue;color:black;">@item.dksk_madv</td>
+                                    <td style="border-color:blue;color:black;">@item.dksk_loaikham</td>
+                                    <td style="border-color:blue;color:black;">@item.dksk_macb</td>
+                                    <td style="border-color:blue;color:black;">@item.dksk_ghichu</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

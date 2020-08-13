@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Khám sức khỏe theo đoàn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Create report content -->
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <style>
+        .width100per {
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid blue;
+        }
+
+        th {
+            text-align: center;
+            padding: 2px;
+            background-color: darkgray;
+            color: white;
+            border: 1px solid blue;
+        }
+
+        td {
+            background-color: cornsilk;
+            color: black;
+            border: 1px solid blue;
+        }
+
+        tr {
+            border: 1px solid blue;
+        }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+    </style>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    @section scripts{
+        <script src="~/Scripts/khamsuckhoetheodoan/index.js"></script>
+        <script>
+            var khamsuckhoetheodoancontroller = new khamsuckhoetheodoancontroller();
+            khamsuckhoetheodoancontroller.init();
+        </script>
+    }
+</head>
+
+<body>
+    <div>
+        <form method="post" action="" id="danhsachcanbo">
+            <table border="0">
+                <td colspan="3" style="border: 1px solid blue; text-align: center; background-color: blue; color: white; font-weight:bold;">Chọn thông tin đợt khám</td>
+                <tr>
+                    <td>Ngày khám: </td>
+                    <td colspan="2"><input type="date" id="ngaykhamsuckhoe" class="width100per" name="ngaykham" /></td>
+                </tr>
+                <tr>
+                    <td> Đơn vị: </td>
+                    <td colspan="2">
+                        <select name="donvi" id="donvi" class="width100per">
+                            @foreach (var item in Model)
+                            {
+                                <option>@item</option>
+                            }
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mã cán bộ:</td>
+                    <td colspan="2"><input name="tk_manhanvien" type="text" class="width100per" id="tk_manhanvien" placeholder="Tìm kiếm theo mã" width="100%" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="lammoi" value="Làm mới"></td>
+                    <td><input name="trangthaikham" type="radio" value="1" checked="checked" class="trangthaikham" id="trangthaikham" />Chờ khám</td>
+                    <td><input name="trangthaikham" type="radio" value="3" class="trangthaikham" id="trangthaikham" />Đã khám</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border: 1px solid blue; text-align: center; background-color: blue; color: white; font-weight:bold;">Danh sách cán bộ</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <div id="ds_canbo">
+                            <table border="1">
+                                <thead style="background-color:lightskyblue;color:white" id="width100per">
+                                    <tr>
+                                        <th width="200px">Họ và tên</th>
+                                        <th>Giới tính</th>
+                                        <th>Ngày sinh</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody"></tbody>
+                            </table>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>
