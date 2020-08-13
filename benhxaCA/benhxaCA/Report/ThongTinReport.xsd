@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ThongTinReport" targetNamespace="http://tempuri.org/ThongTinReport.xsd" xmlns:mstns="http://tempuri.org/ThongTinReport.xsd" xmlns="http://tempuri.org/ThongTinReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="benhxaCAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="benhxaCAConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.benhxaCAConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ThongTinReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ThongTinReport" msprop:Generator_UserDSName="ThongTinReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GET_THONGTINCANBO" msprop:Generator_TableClassName="GET_THONGTINCANBODataTable" msprop:Generator_TableVarName="tableGET_THONGTINCANBO" msprop:Generator_RowChangedName="GET_THONGTINCANBORowChanged" msprop:Generator_TablePropName="GET_THONGTINCANBO" msprop:Generator_RowDeletingName="GET_THONGTINCANBORowDeleting" msprop:Generator_RowChangingName="GET_THONGTINCANBORowChanging" msprop:Generator_RowEvHandlerName="GET_THONGTINCANBORowChangeEventHandler" msprop:Generator_RowDeletedName="GET_THONGTINCANBORowDeleted" msprop:Generator_RowClassName="GET_THONGTINCANBORow" msprop:Generator_UserTableName="GET_THONGTINCANBO" msprop:Generator_RowEvArgName="GET_THONGTINCANBORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ttcb_hoten" msprop:Generator_ColumnVarNameInTable="columnttcb_hoten" msprop:Generator_ColumnPropNameInRow="ttcb_hoten" msprop:Generator_ColumnPropNameInTable="ttcb_hotenColumn" msprop:Generator_UserColumnName="ttcb_hoten" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_ngaysinh" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnttcb_ngaysinh" msprop:Generator_ColumnPropNameInRow="ttcb_ngaysinh" msprop:Generator_ColumnPropNameInTable="ttcb_ngaysinhColumn" msprop:Generator_UserColumnName="ttcb_ngaysinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_gioitinh" msprop:Generator_ColumnVarNameInTable="columnttcb_gioitinh" msprop:Generator_ColumnPropNameInRow="ttcb_gioitinh" msprop:Generator_ColumnPropNameInTable="ttcb_gioitinhColumn" msprop:Generator_UserColumnName="ttcb_gioitinh" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ttcb_cmnd_or_cccd" msprop:Generator_ColumnVarNameInTable="columnttcb_cmnd_or_cccd" msprop:Generator_ColumnPropNameInRow="ttcb_cmnd_or_cccd" msprop:Generator_ColumnPropNameInTable="ttcb_cmnd_or_cccdColumn" msprop:Generator_UserColumnName="ttcb_cmnd_or_cccd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_dantoc" msprop:Generator_ColumnVarNameInTable="columnttcb_dantoc" msprop:Generator_ColumnPropNameInRow="ttcb_dantoc" msprop:Generator_ColumnPropNameInTable="ttcb_dantocColumn" msprop:Generator_UserColumnName="ttcb_dantoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_sodienthoai" msprop:Generator_ColumnVarNameInTable="columnttcb_sodienthoai" msprop:Generator_ColumnPropNameInRow="ttcb_sodienthoai" msprop:Generator_ColumnPropNameInTable="ttcb_sodienthoaiColumn" msprop:Generator_UserColumnName="ttcb_sodienthoai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_hokhauthuongtru" msprop:Generator_ColumnVarNameInTable="columnttcb_hokhauthuongtru" msprop:Generator_ColumnPropNameInRow="ttcb_hokhauthuongtru" msprop:Generator_ColumnPropNameInTable="ttcb_hokhauthuongtruColumn" msprop:Generator_UserColumnName="ttcb_hokhauthuongtru" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_choohiennay" msprop:Generator_ColumnVarNameInTable="columnttcb_choohiennay" msprop:Generator_ColumnPropNameInRow="ttcb_choohiennay" msprop:Generator_ColumnPropNameInTable="ttcb_choohiennayColumn" msprop:Generator_UserColumnName="ttcb_choohiennay" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ttcb_hinhanh" msprop:Generator_ColumnVarNameInTable="columnttcb_hinhanh" msprop:Generator_ColumnPropNameInRow="ttcb_hinhanh" msprop:Generator_ColumnPropNameInTable="ttcb_hinhanhColumn" msprop:Generator_UserColumnName="ttcb_hinhanh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dv_ten" msprop:Generator_ColumnVarNameInTable="columndv_ten" msprop:Generator_ColumnPropNameInRow="dv_ten" msprop:Generator_ColumnPropNameInTable="dv_tenColumn" msprop:Generator_UserColumnName="dv_ten" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kl_loaisuckhoe" msprop:Generator_ColumnVarNameInTable="columnkl_loaisuckhoe" msprop:Generator_ColumnPropNameInRow="kl_loaisuckhoe" msprop:Generator_ColumnPropNameInTable="kl_loaisuckhoeColumn" msprop:Generator_UserColumnName="kl_loaisuckhoe" type="xs:int" />
+              <xs:element name="kl_ketluantong" msprop:Generator_ColumnVarNameInTable="columnkl_ketluantong" msprop:Generator_ColumnPropNameInRow="kl_ketluantong" msprop:Generator_ColumnPropNameInTable="kl_ketluantongColumn" msprop:Generator_UserColumnName="kl_ketluantong" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dksk_ngaykham" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndksk_ngaykham" msprop:Generator_ColumnPropNameInRow="dksk_ngaykham" msprop:Generator_ColumnPropNameInTable="dksk_ngaykhamColumn" msprop:Generator_UserColumnName="dksk_ngaykham" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lslv_ngaybatdaulamviec" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnlslv_ngaybatdaulamviec" msprop:Generator_ColumnPropNameInRow="lslv_ngaybatdaulamviec" msprop:Generator_ColumnPropNameInTable="lslv_ngaybatdaulamviecColumn" msprop:Generator_UserColumnName="lslv_ngaybatdaulamviec" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,71 @@
+﻿@model List<benhxaCA.Models.dotkhamsuckhoe>
+@{
+    ViewBag.Title = "danhsachdotkham";
+    
+}
+<!--Create report content -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid blue;
+    }
+
+    th {
+        text-align: center;
+        padding: 2px;
+        background-color: darkgray;
+        color: white;
+        border: 1px solid blue;
+    }
+
+    td {
+        background-color: cornsilk;
+        color: black;
+        border: 1px solid blue;
+    }
+
+    tr {
+        border: 1px solid blue;
+    }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    #hienthi {
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div id="hienthi" style="width:100%; padding-bottom: 5px;margin-top:10px;">
+        <table>
+            <tr>
+
+                <th colspan="6" style="text-align: left;">
+                    Đợi khám sức khỏe
+                </th>
+            </tr>
+            <tr>
+                <th>Số thứ tự</th>
+                <th>Ngày khám</th>
+                <th>Mã đơn vị</th>
+                <th>Loại khám</th>
+                <th>Ghi chú</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.dksk_stt</td>
+                    <td>@item.dksk_ngaykham</td>
+                    <td>@item.dksk_madv</td>
+                    <td>@item.dksk_loaikham</td>
+                    <td>@item.dksk_ghichu</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>

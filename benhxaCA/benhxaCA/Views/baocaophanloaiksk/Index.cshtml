@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Báo cáo tình hình khám sức khỏe theo loại sức khỏe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        .panel_title {
+            width: 1000px;
+            color: white;
+            margin-bottom: 10px;
+            background-color: blue;
+            height: 20px;
+        }
+
+        .center_content {
+            border: 1px solid blue;
+            width: 1000px;
+            margin-left: 180px;
+        }
+
+        .button_shadow {
+            background-color: green;
+            padding: 5px 10px;
+            color: white;
+            width: 150px;
+            border: 0px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        input, select {
+            background-color: aqua;
+            border: none;
+            height: 30px;
+            border-radius: 0.1cm;
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    @section scripts{
+        <script src="~/Scripts/baocaophanloaiksk/index.js"></script>
+        <script>
+            var baocaophanloaikskcontroller = new baocaophanloaikskcontroller();
+            baocaophanloaikskcontroller.init();
+        </script>
+    }
+</head>
+
+
+<body>
+    <div id="panelwrap">
+        <div class="center_content" style="margin-top:10px;">
+            <div class="panel_with_title">
+                <div class="panel_title" style="font-size:medium; text-align: center;"><b>Báo cáo tình hình khám sức khỏe theo loại sức khỏe</b></div>
+                <div class="panel_body">
+                    <form method="post" action="" id="khamsuckhoe">
+                        <table width="900" border="0" align="center">
+                            <tr>
+                                <td>Từ ngày: </td>
+                                <td><input name="tungay" type="date" class="tungay" id="tungay" style="width: 100%;" placeholder="dd/mm/yyyy" required></td>
+                                <td>Đến ngày: </td>
+                                <td><input name="denngay" type="date" class="denngay" id="denngay" style="width: 100%;" placeholder="dd/mm/yyyy" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <input type="button" name="inbaocao" id="inbaocao" value="Xem và In báo cáo" class="button_shadow" />
+                                    <input type="reset" name="lammoi" id="lammoi" value="Làm mới" class="button_shadow" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Bệnh Xá Công An</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="~/Home/Index">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Khám bệnh
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="~/khamsuckhoetheodoan/Index">Khám sức khỏe định kỳ</a>
+                <a href="~/themdoanksk/Index">Thêm đợt khám sức khỏe</a>
+                <a href="~/khamsktuphat/Index">Khám sức khỏe tự phát</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Báo cáo
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="~/baocaokhamsuckhoe/Index">Báo cáo khám sức khỏe tổng quan</a>
+                <a href="~/baocaophanloaiksk/Index">Báo cáo khám sức khỏe theo loại sức khỏe</a>
+                <a href="~/baocaoksktheodotdinhky/Index">Báo cáo tình hình khám sức khỏe theo đợt định kỳ</a>
+                <a href="~/baocaoksktheodottuphat/Index">Báo cáo tình hình khám sức khỏe theo đợt tự phát</a>
+                <a href="~/baocaoksktheoloaikham/Index">Báo cáo tình hình khám sức khỏe theo loại khám</a>
+                <a href="~/baocaoksktheodonvi/Index">Báo cáo tình hình khám sức khỏe theo đơn vị</a>
+            </div>
+        </div>
+        <a href="~/Home/Contact">Contact</a>
+        <a href="~/Home/About">About</a>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Bệnh xá Công An</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("get", required: false)
+</body>
+</html>
