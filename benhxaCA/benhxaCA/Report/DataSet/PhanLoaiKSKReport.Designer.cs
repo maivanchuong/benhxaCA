@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace benhxaCA.Report {
+namespace benhxaCA.Report.DataSet {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace benhxaCA.Report {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RPKSKTheoDonViReport")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PhanLoaiKSKReport")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class RPKSKTheoDonViReport : global::System.Data.DataSet {
+    public partial class PhanLoaiKSKReport : global::System.Data.DataSet {
         
-        private GET_TONGHOP_THEODONVIDataTable tableGET_TONGHOP_THEODONVI;
+        private GET_TONGHOP_PHANLOAI_KSKDataTable tableGET_TONGHOP_PHANLOAI_KSK;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public RPKSKTheoDonViReport() {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public PhanLoaiKSKReport() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -40,8 +40,8 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected RPKSKTheoDonViReport(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected PhanLoaiKSKReport(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace benhxaCA.Report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GET_TONGHOP_THEODONVI"] != null)) {
-                    base.Tables.Add(new GET_TONGHOP_THEODONVIDataTable(ds.Tables["GET_TONGHOP_THEODONVI"]));
+                if ((ds.Tables["GET_TONGHOP_PHANLOAI_KSK"] != null)) {
+                    base.Tables.Add(new GET_TONGHOP_PHANLOAI_KSKDataTable(ds.Tables["GET_TONGHOP_PHANLOAI_KSK"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -76,17 +76,17 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GET_TONGHOP_THEODONVIDataTable GET_TONGHOP_THEODONVI {
+        public GET_TONGHOP_PHANLOAI_KSKDataTable GET_TONGHOP_PHANLOAI_KSK {
             get {
-                return this.tableGET_TONGHOP_THEODONVI;
+                return this.tableGET_TONGHOP_PHANLOAI_KSK;
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -99,7 +99,7 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public new global::System.Data.DataTableCollection Tables {
             get {
@@ -108,7 +108,7 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public new global::System.Data.DataRelationCollection Relations {
             get {
@@ -117,7 +117,7 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override void InitializeDerivedDataSet() {
             this.BeginInit();
             this.InitClass();
@@ -125,35 +125,35 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            RPKSKTheoDonViReport cln = ((RPKSKTheoDonViReport)(base.Clone()));
+            PhanLoaiKSKReport cln = ((PhanLoaiKSKReport)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override bool ShouldSerializeTables() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override bool ShouldSerializeRelations() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override void ReadXmlSerializable(global::System.Xml.XmlReader reader) {
             if ((this.DetermineSchemaSerializationMode(reader) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GET_TONGHOP_THEODONVI"] != null)) {
-                    base.Tables.Add(new GET_TONGHOP_THEODONVIDataTable(ds.Tables["GET_TONGHOP_THEODONVI"]));
+                if ((ds.Tables["GET_TONGHOP_PHANLOAI_KSK"] != null)) {
+                    base.Tables.Add(new GET_TONGHOP_PHANLOAI_KSKDataTable(ds.Tables["GET_TONGHOP_PHANLOAI_KSK"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -171,7 +171,7 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected override global::System.Xml.Schema.XmlSchema GetSchemaSerializable() {
             global::System.IO.MemoryStream stream = new global::System.IO.MemoryStream();
             this.WriteXmlSchema(new global::System.Xml.XmlTextWriter(stream, null));
@@ -180,42 +180,42 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars() {
             this.InitVars(true);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGET_TONGHOP_THEODONVI = ((GET_TONGHOP_THEODONVIDataTable)(base.Tables["GET_TONGHOP_THEODONVI"]));
+            this.tableGET_TONGHOP_PHANLOAI_KSK = ((GET_TONGHOP_PHANLOAI_KSKDataTable)(base.Tables["GET_TONGHOP_PHANLOAI_KSK"]));
             if ((initTable == true)) {
-                if ((this.tableGET_TONGHOP_THEODONVI != null)) {
-                    this.tableGET_TONGHOP_THEODONVI.InitVars();
+                if ((this.tableGET_TONGHOP_PHANLOAI_KSK != null)) {
+                    this.tableGET_TONGHOP_PHANLOAI_KSK.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RPKSKTheoDonViReport";
+            this.DataSetName = "PhanLoaiKSKReport";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RPKSKTheoDonViReport.xsd";
+            this.Namespace = "http://tempuri.org/PhanLoaiKSKReport.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGET_TONGHOP_THEODONVI = new GET_TONGHOP_THEODONVIDataTable();
-            base.Tables.Add(this.tableGET_TONGHOP_THEODONVI);
+            this.tableGET_TONGHOP_PHANLOAI_KSK = new GET_TONGHOP_PHANLOAI_KSKDataTable();
+            base.Tables.Add(this.tableGET_TONGHOP_PHANLOAI_KSK);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeGET_TONGHOP_THEODONVI() {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeGET_TONGHOP_PHANLOAI_KSK() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -223,9 +223,9 @@ namespace benhxaCA.Report {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            RPKSKTheoDonViReport ds = new RPKSKTheoDonViReport();
+            PhanLoaiKSKReport ds = new PhanLoaiKSKReport();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -269,60 +269,62 @@ namespace benhxaCA.Report {
             return type;
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void GET_TONGHOP_THEODONVIRowChangeEventHandler(object sender, GET_TONGHOP_THEODONVIRowChangeEvent e);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void GET_TONGHOP_PHANLOAI_KSKRowChangeEventHandler(object sender, GET_TONGHOP_PHANLOAI_KSKRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GET_TONGHOP_THEODONVIDataTable : global::System.Data.TypedTableBase<GET_TONGHOP_THEODONVIRow> {
+        public partial class GET_TONGHOP_PHANLOAI_KSKDataTable : global::System.Data.TypedTableBase<GET_TONGHOP_PHANLOAI_KSKRow> {
             
-            private global::System.Data.DataColumn columnkskdv_tungay;
+            private global::System.Data.DataColumn columnpl_tungay;
             
-            private global::System.Data.DataColumn columnkskdv_denngay;
+            private global::System.Data.DataColumn columnpl_denngay;
             
-            private global::System.Data.DataColumn columnkskdv_tendv;
+            private global::System.Data.DataColumn columnpl_tong_loai_mot;
             
-            private global::System.Data.DataColumn columnkskdv_tong;
+            private global::System.Data.DataColumn columnpl_loai_mot_nam;
             
-            private global::System.Data.DataColumn columnkskdv_kskdky;
+            private global::System.Data.DataColumn columnpl_loai_mot_nu;
             
-            private global::System.Data.DataColumn columnkskdv_kskdky_nam;
+            private global::System.Data.DataColumn columnpl_tong_loai_hai;
             
-            private global::System.Data.DataColumn columnkskdv_kskdky_nu;
+            private global::System.Data.DataColumn columnpl_loai_hai_nam;
             
-            private global::System.Data.DataColumn columnkskdv_ksktuphat;
+            private global::System.Data.DataColumn columnpl_loai_hai_nu;
             
-            private global::System.Data.DataColumn columnkskdv_ksktuphat_nam;
+            private global::System.Data.DataColumn columnpl_tong_loai_ba;
             
-            private global::System.Data.DataColumn columnkskdv_ksktuphat_nu;
+            private global::System.Data.DataColumn columnpl_loai_ba_nam;
             
-            private global::System.Data.DataColumn columnkskdv_dakham;
+            private global::System.Data.DataColumn columnpl_loai_ba_nu;
             
-            private global::System.Data.DataColumn columnkskdv_dakham_nam;
+            private global::System.Data.DataColumn columnpl_tong_loai_bon;
             
-            private global::System.Data.DataColumn columndkskdv_dakham_nữ;
+            private global::System.Data.DataColumn columnpl_loai_bon_nam;
             
-            private global::System.Data.DataColumn columndkskdv_chokham;
+            private global::System.Data.DataColumn columnpl_loai_bon_nu;
             
-            private global::System.Data.DataColumn columndkskdv_chokham_nam;
+            private global::System.Data.DataColumn columnpl_tong_loai_5;
             
-            private global::System.Data.DataColumn columndkskdv_chokham_nu;
+            private global::System.Data.DataColumn columnpl_loai_5_nam;
+            
+            private global::System.Data.DataColumn columnpl_loai_5_nu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIDataTable() {
-                this.TableName = "GET_TONGHOP_THEODONVI";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKDataTable() {
+                this.TableName = "GET_TONGHOP_PHANLOAI_KSK";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GET_TONGHOP_THEODONVIDataTable(global::System.Data.DataTable table) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal GET_TONGHOP_PHANLOAI_KSKDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -338,142 +340,150 @@ namespace benhxaCA.Report {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected GET_TONGHOP_THEODONVIDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected GET_TONGHOP_PHANLOAI_KSKDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_tungayColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tungayColumn {
                 get {
-                    return this.columnkskdv_tungay;
+                    return this.columnpl_tungay;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_denngayColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_denngayColumn {
                 get {
-                    return this.columnkskdv_denngay;
+                    return this.columnpl_denngay;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_tendvColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tong_loai_motColumn {
                 get {
-                    return this.columnkskdv_tendv;
+                    return this.columnpl_tong_loai_mot;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_tongColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_mot_namColumn {
                 get {
-                    return this.columnkskdv_tong;
+                    return this.columnpl_loai_mot_nam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_kskdkyColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_mot_nuColumn {
                 get {
-                    return this.columnkskdv_kskdky;
+                    return this.columnpl_loai_mot_nu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_kskdky_namColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tong_loai_haiColumn {
                 get {
-                    return this.columnkskdv_kskdky_nam;
+                    return this.columnpl_tong_loai_hai;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_kskdky_nuColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_hai_namColumn {
                 get {
-                    return this.columnkskdv_kskdky_nu;
+                    return this.columnpl_loai_hai_nam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_ksktuphatColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_hai_nuColumn {
                 get {
-                    return this.columnkskdv_ksktuphat;
+                    return this.columnpl_loai_hai_nu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_ksktuphat_namColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tong_loai_baColumn {
                 get {
-                    return this.columnkskdv_ksktuphat_nam;
+                    return this.columnpl_tong_loai_ba;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_ksktuphat_nuColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_ba_namColumn {
                 get {
-                    return this.columnkskdv_ksktuphat_nu;
+                    return this.columnpl_loai_ba_nam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_dakhamColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_ba_nuColumn {
                 get {
-                    return this.columnkskdv_dakham;
+                    return this.columnpl_loai_ba_nu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kskdv_dakham_namColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tong_loai_bonColumn {
                 get {
-                    return this.columnkskdv_dakham_nam;
+                    return this.columnpl_tong_loai_bon;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dkskdv_dakham_nữColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_bon_namColumn {
                 get {
-                    return this.columndkskdv_dakham_nữ;
+                    return this.columnpl_loai_bon_nam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dkskdv_chokhamColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_bon_nuColumn {
                 get {
-                    return this.columndkskdv_chokham;
+                    return this.columnpl_loai_bon_nu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dkskdv_chokham_namColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_tong_loai_5Column {
                 get {
-                    return this.columndkskdv_chokham_nam;
+                    return this.columnpl_tong_loai_5;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dkskdv_chokham_nuColumn {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_5_namColumn {
                 get {
-                    return this.columndkskdv_chokham_nu;
+                    return this.columnpl_loai_5_nam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pl_loai_5_nuColumn {
+                get {
+                    return this.columnpl_loai_5_nu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -482,230 +492,235 @@ namespace benhxaCA.Report {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIRow this[int index] {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKRow this[int index] {
                 get {
-                    return ((GET_TONGHOP_THEODONVIRow)(this.Rows[index]));
+                    return ((GET_TONGHOP_PHANLOAI_KSKRow)(this.Rows[index]));
                 }
             }
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GET_TONGHOP_THEODONVIRowChangeEventHandler GET_TONGHOP_THEODONVIRowChanging;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event GET_TONGHOP_PHANLOAI_KSKRowChangeEventHandler GET_TONGHOP_PHANLOAI_KSKRowChanging;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GET_TONGHOP_THEODONVIRowChangeEventHandler GET_TONGHOP_THEODONVIRowChanged;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event GET_TONGHOP_PHANLOAI_KSKRowChangeEventHandler GET_TONGHOP_PHANLOAI_KSKRowChanged;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GET_TONGHOP_THEODONVIRowChangeEventHandler GET_TONGHOP_THEODONVIRowDeleting;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event GET_TONGHOP_PHANLOAI_KSKRowChangeEventHandler GET_TONGHOP_PHANLOAI_KSKRowDeleting;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event GET_TONGHOP_THEODONVIRowChangeEventHandler GET_TONGHOP_THEODONVIRowDeleted;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event GET_TONGHOP_PHANLOAI_KSKRowChangeEventHandler GET_TONGHOP_PHANLOAI_KSKRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddGET_TONGHOP_THEODONVIRow(GET_TONGHOP_THEODONVIRow row) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddGET_TONGHOP_PHANLOAI_KSKRow(GET_TONGHOP_PHANLOAI_KSKRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIRow AddGET_TONGHOP_THEODONVIRow(
-                        string kskdv_tungay, 
-                        string kskdv_denngay, 
-                        string kskdv_tendv, 
-                        int kskdv_tong, 
-                        int kskdv_kskdky, 
-                        int kskdv_kskdky_nam, 
-                        int kskdv_kskdky_nu, 
-                        int kskdv_ksktuphat, 
-                        int kskdv_ksktuphat_nam, 
-                        int kskdv_ksktuphat_nu, 
-                        int kskdv_dakham, 
-                        int kskdv_dakham_nam, 
-                        int dkskdv_dakham_nữ, 
-                        int dkskdv_chokham, 
-                        int dkskdv_chokham_nam, 
-                        int dkskdv_chokham_nu) {
-                GET_TONGHOP_THEODONVIRow rowGET_TONGHOP_THEODONVIRow = ((GET_TONGHOP_THEODONVIRow)(this.NewRow()));
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKRow AddGET_TONGHOP_PHANLOAI_KSKRow(
+                        string pl_tungay, 
+                        string pl_denngay, 
+                        int pl_tong_loai_mot, 
+                        int pl_loai_mot_nam, 
+                        int pl_loai_mot_nu, 
+                        int pl_tong_loai_hai, 
+                        int pl_loai_hai_nam, 
+                        int pl_loai_hai_nu, 
+                        int pl_tong_loai_ba, 
+                        int pl_loai_ba_nam, 
+                        int pl_loai_ba_nu, 
+                        int pl_tong_loai_bon, 
+                        int pl_loai_bon_nam, 
+                        int pl_loai_bon_nu, 
+                        int pl_tong_loai_5, 
+                        int pl_loai_5_nam, 
+                        int pl_loai_5_nu) {
+                GET_TONGHOP_PHANLOAI_KSKRow rowGET_TONGHOP_PHANLOAI_KSKRow = ((GET_TONGHOP_PHANLOAI_KSKRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        kskdv_tungay,
-                        kskdv_denngay,
-                        kskdv_tendv,
-                        kskdv_tong,
-                        kskdv_kskdky,
-                        kskdv_kskdky_nam,
-                        kskdv_kskdky_nu,
-                        kskdv_ksktuphat,
-                        kskdv_ksktuphat_nam,
-                        kskdv_ksktuphat_nu,
-                        kskdv_dakham,
-                        kskdv_dakham_nam,
-                        dkskdv_dakham_nữ,
-                        dkskdv_chokham,
-                        dkskdv_chokham_nam,
-                        dkskdv_chokham_nu};
-                rowGET_TONGHOP_THEODONVIRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGET_TONGHOP_THEODONVIRow);
-                return rowGET_TONGHOP_THEODONVIRow;
+                        pl_tungay,
+                        pl_denngay,
+                        pl_tong_loai_mot,
+                        pl_loai_mot_nam,
+                        pl_loai_mot_nu,
+                        pl_tong_loai_hai,
+                        pl_loai_hai_nam,
+                        pl_loai_hai_nu,
+                        pl_tong_loai_ba,
+                        pl_loai_ba_nam,
+                        pl_loai_ba_nu,
+                        pl_tong_loai_bon,
+                        pl_loai_bon_nam,
+                        pl_loai_bon_nu,
+                        pl_tong_loai_5,
+                        pl_loai_5_nam,
+                        pl_loai_5_nu};
+                rowGET_TONGHOP_PHANLOAI_KSKRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGET_TONGHOP_PHANLOAI_KSKRow);
+                return rowGET_TONGHOP_PHANLOAI_KSKRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GET_TONGHOP_THEODONVIDataTable cln = ((GET_TONGHOP_THEODONVIDataTable)(base.Clone()));
+                GET_TONGHOP_PHANLOAI_KSKDataTable cln = ((GET_TONGHOP_PHANLOAI_KSKDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GET_TONGHOP_THEODONVIDataTable();
+                return new GET_TONGHOP_PHANLOAI_KSKDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnkskdv_tungay = base.Columns["kskdv_tungay"];
-                this.columnkskdv_denngay = base.Columns["kskdv_denngay"];
-                this.columnkskdv_tendv = base.Columns["kskdv_tendv"];
-                this.columnkskdv_tong = base.Columns["kskdv_tong"];
-                this.columnkskdv_kskdky = base.Columns["kskdv_kskdky"];
-                this.columnkskdv_kskdky_nam = base.Columns["kskdv_kskdky_nam"];
-                this.columnkskdv_kskdky_nu = base.Columns["kskdv_kskdky_nu"];
-                this.columnkskdv_ksktuphat = base.Columns["kskdv_ksktuphat"];
-                this.columnkskdv_ksktuphat_nam = base.Columns["kskdv_ksktuphat_nam"];
-                this.columnkskdv_ksktuphat_nu = base.Columns["kskdv_ksktuphat_nu"];
-                this.columnkskdv_dakham = base.Columns["kskdv_dakham"];
-                this.columnkskdv_dakham_nam = base.Columns["kskdv_dakham_nam"];
-                this.columndkskdv_dakham_nữ = base.Columns["dkskdv_dakham_nữ"];
-                this.columndkskdv_chokham = base.Columns["dkskdv_chokham"];
-                this.columndkskdv_chokham_nam = base.Columns["dkskdv_chokham_nam"];
-                this.columndkskdv_chokham_nu = base.Columns["dkskdv_chokham_nu"];
+                this.columnpl_tungay = base.Columns["pl_tungay"];
+                this.columnpl_denngay = base.Columns["pl_denngay"];
+                this.columnpl_tong_loai_mot = base.Columns["pl_tong_loai_mot"];
+                this.columnpl_loai_mot_nam = base.Columns["pl_loai_mot_nam"];
+                this.columnpl_loai_mot_nu = base.Columns["pl_loai_mot_nu"];
+                this.columnpl_tong_loai_hai = base.Columns["pl_tong_loai_hai"];
+                this.columnpl_loai_hai_nam = base.Columns["pl_loai_hai_nam"];
+                this.columnpl_loai_hai_nu = base.Columns["pl_loai_hai_nu"];
+                this.columnpl_tong_loai_ba = base.Columns["pl_tong_loai_ba"];
+                this.columnpl_loai_ba_nam = base.Columns["pl_loai_ba_nam"];
+                this.columnpl_loai_ba_nu = base.Columns["pl_loai_ba_nu"];
+                this.columnpl_tong_loai_bon = base.Columns["pl_tong_loai_bon"];
+                this.columnpl_loai_bon_nam = base.Columns["pl_loai_bon_nam"];
+                this.columnpl_loai_bon_nu = base.Columns["pl_loai_bon_nu"];
+                this.columnpl_tong_loai_5 = base.Columns["pl_tong_loai_5"];
+                this.columnpl_loai_5_nam = base.Columns["pl_loai_5_nam"];
+                this.columnpl_loai_5_nu = base.Columns["pl_loai_5_nu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnkskdv_tungay = new global::System.Data.DataColumn("kskdv_tungay", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_tungay);
-                this.columnkskdv_denngay = new global::System.Data.DataColumn("kskdv_denngay", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_denngay);
-                this.columnkskdv_tendv = new global::System.Data.DataColumn("kskdv_tendv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_tendv);
-                this.columnkskdv_tong = new global::System.Data.DataColumn("kskdv_tong", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_tong);
-                this.columnkskdv_kskdky = new global::System.Data.DataColumn("kskdv_kskdky", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_kskdky);
-                this.columnkskdv_kskdky_nam = new global::System.Data.DataColumn("kskdv_kskdky_nam", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_kskdky_nam);
-                this.columnkskdv_kskdky_nu = new global::System.Data.DataColumn("kskdv_kskdky_nu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_kskdky_nu);
-                this.columnkskdv_ksktuphat = new global::System.Data.DataColumn("kskdv_ksktuphat", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_ksktuphat);
-                this.columnkskdv_ksktuphat_nam = new global::System.Data.DataColumn("kskdv_ksktuphat_nam", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_ksktuphat_nam);
-                this.columnkskdv_ksktuphat_nu = new global::System.Data.DataColumn("kskdv_ksktuphat_nu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_ksktuphat_nu);
-                this.columnkskdv_dakham = new global::System.Data.DataColumn("kskdv_dakham", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_dakham);
-                this.columnkskdv_dakham_nam = new global::System.Data.DataColumn("kskdv_dakham_nam", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkskdv_dakham_nam);
-                this.columndkskdv_dakham_nữ = new global::System.Data.DataColumn("dkskdv_dakham_nữ", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndkskdv_dakham_nữ);
-                this.columndkskdv_chokham = new global::System.Data.DataColumn("dkskdv_chokham", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndkskdv_chokham);
-                this.columndkskdv_chokham_nam = new global::System.Data.DataColumn("dkskdv_chokham_nam", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndkskdv_chokham_nam);
-                this.columndkskdv_chokham_nu = new global::System.Data.DataColumn("dkskdv_chokham_nu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndkskdv_chokham_nu);
-                this.columnkskdv_tungay.ReadOnly = true;
-                this.columnkskdv_tungay.MaxLength = 10;
-                this.columnkskdv_denngay.ReadOnly = true;
-                this.columnkskdv_denngay.MaxLength = 10;
-                this.columnkskdv_tendv.ReadOnly = true;
-                this.columnkskdv_tendv.MaxLength = 200;
-                this.columnkskdv_tong.ReadOnly = true;
-                this.columnkskdv_kskdky.ReadOnly = true;
-                this.columnkskdv_kskdky_nam.ReadOnly = true;
-                this.columnkskdv_kskdky_nu.ReadOnly = true;
-                this.columnkskdv_ksktuphat.ReadOnly = true;
-                this.columnkskdv_ksktuphat_nam.ReadOnly = true;
-                this.columnkskdv_ksktuphat_nu.ReadOnly = true;
-                this.columnkskdv_dakham.ReadOnly = true;
-                this.columnkskdv_dakham_nam.ReadOnly = true;
-                this.columndkskdv_dakham_nữ.ReadOnly = true;
-                this.columndkskdv_chokham.ReadOnly = true;
-                this.columndkskdv_chokham_nam.ReadOnly = true;
-                this.columndkskdv_chokham_nu.ReadOnly = true;
+                this.columnpl_tungay = new global::System.Data.DataColumn("pl_tungay", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tungay);
+                this.columnpl_denngay = new global::System.Data.DataColumn("pl_denngay", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_denngay);
+                this.columnpl_tong_loai_mot = new global::System.Data.DataColumn("pl_tong_loai_mot", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tong_loai_mot);
+                this.columnpl_loai_mot_nam = new global::System.Data.DataColumn("pl_loai_mot_nam", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_mot_nam);
+                this.columnpl_loai_mot_nu = new global::System.Data.DataColumn("pl_loai_mot_nu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_mot_nu);
+                this.columnpl_tong_loai_hai = new global::System.Data.DataColumn("pl_tong_loai_hai", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tong_loai_hai);
+                this.columnpl_loai_hai_nam = new global::System.Data.DataColumn("pl_loai_hai_nam", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_hai_nam);
+                this.columnpl_loai_hai_nu = new global::System.Data.DataColumn("pl_loai_hai_nu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_hai_nu);
+                this.columnpl_tong_loai_ba = new global::System.Data.DataColumn("pl_tong_loai_ba", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tong_loai_ba);
+                this.columnpl_loai_ba_nam = new global::System.Data.DataColumn("pl_loai_ba_nam", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_ba_nam);
+                this.columnpl_loai_ba_nu = new global::System.Data.DataColumn("pl_loai_ba_nu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_ba_nu);
+                this.columnpl_tong_loai_bon = new global::System.Data.DataColumn("pl_tong_loai_bon", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tong_loai_bon);
+                this.columnpl_loai_bon_nam = new global::System.Data.DataColumn("pl_loai_bon_nam", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_bon_nam);
+                this.columnpl_loai_bon_nu = new global::System.Data.DataColumn("pl_loai_bon_nu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_bon_nu);
+                this.columnpl_tong_loai_5 = new global::System.Data.DataColumn("pl_tong_loai_5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_tong_loai_5);
+                this.columnpl_loai_5_nam = new global::System.Data.DataColumn("pl_loai_5_nam", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_5_nam);
+                this.columnpl_loai_5_nu = new global::System.Data.DataColumn("pl_loai_5_nu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpl_loai_5_nu);
+                this.columnpl_tungay.ReadOnly = true;
+                this.columnpl_tungay.MaxLength = 10;
+                this.columnpl_denngay.ReadOnly = true;
+                this.columnpl_denngay.MaxLength = 10;
+                this.columnpl_tong_loai_mot.ReadOnly = true;
+                this.columnpl_loai_mot_nam.ReadOnly = true;
+                this.columnpl_loai_mot_nu.ReadOnly = true;
+                this.columnpl_tong_loai_hai.ReadOnly = true;
+                this.columnpl_loai_hai_nam.ReadOnly = true;
+                this.columnpl_loai_hai_nu.ReadOnly = true;
+                this.columnpl_tong_loai_ba.ReadOnly = true;
+                this.columnpl_loai_ba_nam.ReadOnly = true;
+                this.columnpl_loai_ba_nu.ReadOnly = true;
+                this.columnpl_tong_loai_bon.ReadOnly = true;
+                this.columnpl_loai_bon_nam.ReadOnly = true;
+                this.columnpl_loai_bon_nu.ReadOnly = true;
+                this.columnpl_tong_loai_5.ReadOnly = true;
+                this.columnpl_loai_5_nam.ReadOnly = true;
+                this.columnpl_loai_5_nu.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIRow NewGET_TONGHOP_THEODONVIRow() {
-                return ((GET_TONGHOP_THEODONVIRow)(this.NewRow()));
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKRow NewGET_TONGHOP_PHANLOAI_KSKRow() {
+                return ((GET_TONGHOP_PHANLOAI_KSKRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GET_TONGHOP_THEODONVIRow(builder);
+                return new GET_TONGHOP_PHANLOAI_KSKRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GET_TONGHOP_THEODONVIRow);
+                return typeof(GET_TONGHOP_PHANLOAI_KSKRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GET_TONGHOP_THEODONVIRowChanged != null)) {
-                    this.GET_TONGHOP_THEODONVIRowChanged(this, new GET_TONGHOP_THEODONVIRowChangeEvent(((GET_TONGHOP_THEODONVIRow)(e.Row)), e.Action));
+                if ((this.GET_TONGHOP_PHANLOAI_KSKRowChanged != null)) {
+                    this.GET_TONGHOP_PHANLOAI_KSKRowChanged(this, new GET_TONGHOP_PHANLOAI_KSKRowChangeEvent(((GET_TONGHOP_PHANLOAI_KSKRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GET_TONGHOP_THEODONVIRowChanging != null)) {
-                    this.GET_TONGHOP_THEODONVIRowChanging(this, new GET_TONGHOP_THEODONVIRowChangeEvent(((GET_TONGHOP_THEODONVIRow)(e.Row)), e.Action));
+                if ((this.GET_TONGHOP_PHANLOAI_KSKRowChanging != null)) {
+                    this.GET_TONGHOP_PHANLOAI_KSKRowChanging(this, new GET_TONGHOP_PHANLOAI_KSKRowChangeEvent(((GET_TONGHOP_PHANLOAI_KSKRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GET_TONGHOP_THEODONVIRowDeleted != null)) {
-                    this.GET_TONGHOP_THEODONVIRowDeleted(this, new GET_TONGHOP_THEODONVIRowChangeEvent(((GET_TONGHOP_THEODONVIRow)(e.Row)), e.Action));
+                if ((this.GET_TONGHOP_PHANLOAI_KSKRowDeleted != null)) {
+                    this.GET_TONGHOP_PHANLOAI_KSKRowDeleted(this, new GET_TONGHOP_PHANLOAI_KSKRowChangeEvent(((GET_TONGHOP_PHANLOAI_KSKRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GET_TONGHOP_THEODONVIRowDeleting != null)) {
-                    this.GET_TONGHOP_THEODONVIRowDeleting(this, new GET_TONGHOP_THEODONVIRowChangeEvent(((GET_TONGHOP_THEODONVIRow)(e.Row)), e.Action));
+                if ((this.GET_TONGHOP_PHANLOAI_KSKRowDeleting != null)) {
+                    this.GET_TONGHOP_PHANLOAI_KSKRowDeleting(this, new GET_TONGHOP_PHANLOAI_KSKRowChangeEvent(((GET_TONGHOP_PHANLOAI_KSKRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveGET_TONGHOP_THEODONVIRow(GET_TONGHOP_THEODONVIRow row) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveGET_TONGHOP_PHANLOAI_KSKRow(GET_TONGHOP_PHANLOAI_KSKRow row) {
                 this.Rows.Remove(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RPKSKTheoDonViReport ds = new RPKSKTheoDonViReport();
+                PhanLoaiKSKReport ds = new PhanLoaiKSKReport();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -723,7 +738,7 @@ namespace benhxaCA.Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GET_TONGHOP_THEODONVIDataTable";
+                attribute2.FixedValue = "GET_TONGHOP_PHANLOAI_KSKDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -767,503 +782,536 @@ namespace benhxaCA.Report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GET_TONGHOP_THEODONVIRow : global::System.Data.DataRow {
+        public partial class GET_TONGHOP_PHANLOAI_KSKRow : global::System.Data.DataRow {
             
-            private GET_TONGHOP_THEODONVIDataTable tableGET_TONGHOP_THEODONVI;
+            private GET_TONGHOP_PHANLOAI_KSKDataTable tableGET_TONGHOP_PHANLOAI_KSK;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal GET_TONGHOP_THEODONVIRow(global::System.Data.DataRowBuilder rb) : 
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal GET_TONGHOP_PHANLOAI_KSKRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGET_TONGHOP_THEODONVI = ((GET_TONGHOP_THEODONVIDataTable)(this.Table));
+                this.tableGET_TONGHOP_PHANLOAI_KSK = ((GET_TONGHOP_PHANLOAI_KSKDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string kskdv_tungay {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pl_tungay {
                 get {
                     try {
-                        return ((string)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_tungayColumn]));
+                        return ((string)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tungayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_tungay\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tungay\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_tungayColumn] = value;
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tungayColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string kskdv_denngay {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pl_denngay {
                 get {
                     try {
-                        return ((string)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_denngayColumn]));
+                        return ((string)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_denngayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_denngay\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_denngay\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_denngayColumn] = value;
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_denngayColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string kskdv_tendv {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_tong_loai_mot {
                 get {
                     try {
-                        return ((string)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_tendvColumn]));
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_motColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_tendv\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_tendvColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_tong {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_tongColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_tong\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_tongColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_kskdky {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdkyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_kskdky\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdkyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_kskdky_nam {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_namColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_kskdky_nam\' in table \'GET_TONGHOP_THEODONVI\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_namColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_kskdky_nu {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_nuColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_kskdky_nu\' in table \'GET_TONGHOP_THEODONVI\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_nuColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_ksktuphat {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphatColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_ksktuphat\' in table \'GET_TONGHOP_THEODONVI\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphatColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_ksktuphat_nam {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_namColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_ksktuphat_nam\' in table \'GET_TONGHOP_THEODONVI\' is DB" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tong_loai_mot\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DB" +
                                 "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_namColumn] = value;
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_motColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_ksktuphat_nu {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_mot_nam {
                 get {
                     try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_nuColumn]));
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_namColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_ksktuphat_nu\' in table \'GET_TONGHOP_THEODONVI\' is DBN" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_mot_nam\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBN" +
                                 "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_nuColumn] = value;
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_namColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_dakham {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_mot_nu {
                 get {
                     try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakhamColumn]));
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_nuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_dakham\' in table \'GET_TONGHOP_THEODONVI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakhamColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int kskdv_dakham_nam {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakham_namColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kskdv_dakham_nam\' in table \'GET_TONGHOP_THEODONVI\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakham_namColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dkskdv_dakham_nữ {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.dkskdv_dakham_nữColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dkskdv_dakham_nữ\' in table \'GET_TONGHOP_THEODONVI\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.dkskdv_dakham_nữColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dkskdv_chokham {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokhamColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dkskdv_chokham\' in table \'GET_TONGHOP_THEODONVI\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokhamColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dkskdv_chokham_nam {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_namColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dkskdv_chokham_nam\' in table \'GET_TONGHOP_THEODONVI\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_namColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dkskdv_chokham_nu {
-                get {
-                    try {
-                        return ((int)(this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_nuColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dkskdv_chokham_nu\' in table \'GET_TONGHOP_THEODONVI\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_mot_nu\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_nuColumn] = value;
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_nuColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_tungayNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_tungayColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_tong_loai_hai {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_haiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tong_loai_hai\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_haiColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_tungayNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_tungayColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_hai_nam {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_namColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_hai_nam\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_namColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_denngayNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_denngayColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_hai_nu {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_nuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_hai_nu\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_nuColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_denngayNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_denngayColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_tong_loai_ba {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_baColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tong_loai_ba\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_baColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_tendvNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_tendvColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_ba_nam {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_namColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_ba_nam\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_namColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_tendvNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_tendvColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_ba_nu {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_nuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_ba_nu\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_nuColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_tongNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_tongColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_tong_loai_bon {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_bonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tong_loai_bon\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_bonColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_tongNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_tongColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_bon_nam {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_namColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_bon_nam\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_namColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_kskdkyNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_kskdkyColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_bon_nu {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_nuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_bon_nu\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_nuColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_kskdkyNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdkyColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_tong_loai_5 {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_tong_loai_5\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_5Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_kskdky_namNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_namColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_5_nam {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_namColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_5_nam\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_namColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_kskdky_namNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_namColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pl_loai_5_nu {
+                get {
+                    try {
+                        return ((int)(this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_nuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pl_loai_5_nu\' in table \'GET_TONGHOP_PHANLOAI_KSK\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_nuColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_kskdky_nuNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_nuColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tungayNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tungayColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_kskdky_nuNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_kskdky_nuColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tungayNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tungayColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_ksktuphatNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphatColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_denngayNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_denngayColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_ksktuphatNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphatColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_denngayNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_denngayColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_ksktuphat_namNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_namColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tong_loai_motNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_motColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_ksktuphat_namNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_namColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tong_loai_motNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_motColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_ksktuphat_nuNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_nuColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_mot_namNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_namColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_ksktuphat_nuNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_ksktuphat_nuColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_mot_namNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_namColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_dakhamNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_dakhamColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_mot_nuNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_nuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_dakhamNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakhamColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_mot_nuNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_mot_nuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskskdv_dakham_namNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.kskdv_dakham_namColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tong_loai_haiNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_haiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkskdv_dakham_namNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.kskdv_dakham_namColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tong_loai_haiNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_haiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdkskdv_dakham_nữNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.dkskdv_dakham_nữColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_hai_namNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_namColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdkskdv_dakham_nữNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.dkskdv_dakham_nữColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_hai_namNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_namColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdkskdv_chokhamNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.dkskdv_chokhamColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_hai_nuNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_nuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdkskdv_chokhamNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokhamColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_hai_nuNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_hai_nuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdkskdv_chokham_namNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_namColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tong_loai_baNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_baColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdkskdv_chokham_namNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_namColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tong_loai_baNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_baColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdkskdv_chokham_nuNull() {
-                return this.IsNull(this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_nuColumn);
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_ba_namNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_namColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdkskdv_chokham_nuNull() {
-                this[this.tableGET_TONGHOP_THEODONVI.dkskdv_chokham_nuColumn] = global::System.Convert.DBNull;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_ba_namNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_namColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_ba_nuNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_nuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_ba_nuNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_ba_nuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tong_loai_bonNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_bonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tong_loai_bonNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_bonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_bon_namNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_namColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_bon_namNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_namColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_bon_nuNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_nuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_bon_nuNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_bon_nuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_tong_loai_5Null() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_tong_loai_5Null() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_tong_loai_5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_5_namNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_namColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_5_namNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_namColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispl_loai_5_nuNull() {
+                return this.IsNull(this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_nuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpl_loai_5_nuNull() {
+                this[this.tableGET_TONGHOP_PHANLOAI_KSK.pl_loai_5_nuColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Row event argument class
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class GET_TONGHOP_THEODONVIRowChangeEvent : global::System.EventArgs {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class GET_TONGHOP_PHANLOAI_KSKRowChangeEvent : global::System.EventArgs {
             
-            private GET_TONGHOP_THEODONVIRow eventRow;
+            private GET_TONGHOP_PHANLOAI_KSKRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIRowChangeEvent(GET_TONGHOP_THEODONVIRow row, global::System.Data.DataRowAction action) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKRowChangeEvent(GET_TONGHOP_PHANLOAI_KSKRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GET_TONGHOP_THEODONVIRow Row {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public GET_TONGHOP_PHANLOAI_KSKRow Row {
                 get {
                     return this.eventRow;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataRowAction Action {
                 get {
                     return this.eventAction;
@@ -1272,7 +1320,7 @@ namespace benhxaCA.Report {
         }
     }
 }
-namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
+namespace benhxaCA.Report.DataSet.PhanLoaiKSKReportTableAdapters {
     
     
     /// <summary>
@@ -1284,7 +1332,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GET_TONGHOP_THEODONVITableAdapter : global::System.ComponentModel.Component {
+    public partial class GET_TONGHOP_PHANLOAI_KSKTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1297,13 +1345,13 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public GET_TONGHOP_THEODONVITableAdapter() {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public GET_TONGHOP_PHANLOAI_KSKTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
@@ -1314,7 +1362,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
@@ -1342,7 +1390,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal global::System.Data.SqlClient.SqlTransaction Transaction {
             get {
                 return this._transaction;
@@ -1368,7 +1416,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
@@ -1379,7 +1427,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool ClearBeforeFill {
             get {
                 return this._clearBeforeFill;
@@ -1390,57 +1438,57 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GET_TONGHOP_THEODONVI";
-            tableMapping.ColumnMappings.Add("kskdv_tungay", "kskdv_tungay");
-            tableMapping.ColumnMappings.Add("kskdv_denngay", "kskdv_denngay");
-            tableMapping.ColumnMappings.Add("kskdv_tendv", "kskdv_tendv");
-            tableMapping.ColumnMappings.Add("kskdv_tong", "kskdv_tong");
-            tableMapping.ColumnMappings.Add("kskdv_kskdky", "kskdv_kskdky");
-            tableMapping.ColumnMappings.Add("kskdv_kskdky_nam", "kskdv_kskdky_nam");
-            tableMapping.ColumnMappings.Add("kskdv_kskdky_nu", "kskdv_kskdky_nu");
-            tableMapping.ColumnMappings.Add("kskdv_ksktuphat", "kskdv_ksktuphat");
-            tableMapping.ColumnMappings.Add("kskdv_ksktuphat_nam", "kskdv_ksktuphat_nam");
-            tableMapping.ColumnMappings.Add("kskdv_ksktuphat_nu", "kskdv_ksktuphat_nu");
-            tableMapping.ColumnMappings.Add("kskdv_dakham", "kskdv_dakham");
-            tableMapping.ColumnMappings.Add("kskdv_dakham_nam", "kskdv_dakham_nam");
-            tableMapping.ColumnMappings.Add("dkskdv_dakham_nữ", "dkskdv_dakham_nữ");
-            tableMapping.ColumnMappings.Add("dkskdv_chokham", "dkskdv_chokham");
-            tableMapping.ColumnMappings.Add("dkskdv_chokham_nam", "dkskdv_chokham_nam");
-            tableMapping.ColumnMappings.Add("dkskdv_chokham_nu", "dkskdv_chokham_nu");
+            tableMapping.DataSetTable = "GET_TONGHOP_PHANLOAI_KSK";
+            tableMapping.ColumnMappings.Add("pl_tungay", "pl_tungay");
+            tableMapping.ColumnMappings.Add("pl_denngay", "pl_denngay");
+            tableMapping.ColumnMappings.Add("pl_tong_loai_mot", "pl_tong_loai_mot");
+            tableMapping.ColumnMappings.Add("pl_loai_mot_nam", "pl_loai_mot_nam");
+            tableMapping.ColumnMappings.Add("pl_loai_mot_nu", "pl_loai_mot_nu");
+            tableMapping.ColumnMappings.Add("pl_tong_loai_hai", "pl_tong_loai_hai");
+            tableMapping.ColumnMappings.Add("pl_loai_hai_nam", "pl_loai_hai_nam");
+            tableMapping.ColumnMappings.Add("pl_loai_hai_nu", "pl_loai_hai_nu");
+            tableMapping.ColumnMappings.Add("pl_tong_loai_ba", "pl_tong_loai_ba");
+            tableMapping.ColumnMappings.Add("pl_loai_ba_nam", "pl_loai_ba_nam");
+            tableMapping.ColumnMappings.Add("pl_loai_ba_nu", "pl_loai_ba_nu");
+            tableMapping.ColumnMappings.Add("pl_tong_loai_bon", "pl_tong_loai_bon");
+            tableMapping.ColumnMappings.Add("pl_loai_bon_nam", "pl_loai_bon_nam");
+            tableMapping.ColumnMappings.Add("pl_loai_bon_nu", "pl_loai_bon_nu");
+            tableMapping.ColumnMappings.Add("pl_tong_loai_5", "pl_tong_loai_5");
+            tableMapping.ColumnMappings.Add("pl_loai_5_nam", "pl_loai_5_nam");
+            tableMapping.ColumnMappings.Add("pl_loai_5_nu", "pl_loai_5_nu");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["benhxaCAConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.GET_TONGHOP_THEODONVI";
+            this._commandCollection[0].CommandText = "dbo.GET_TONGHOP_PHANLOAI_KSK";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tungay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@denngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donvi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RPKSKTheoDonViReport.GET_TONGHOP_THEODONVIDataTable dataTable, global::System.Nullable<global::System.DateTime> tungay, global::System.Nullable<global::System.DateTime> denngay, string donvi) {
+        public virtual int Fill(PhanLoaiKSKReport.GET_TONGHOP_PHANLOAI_KSKDataTable dataTable, global::System.Nullable<global::System.DateTime> tungay, global::System.Nullable<global::System.DateTime> denngay) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((tungay.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(tungay.Value));
@@ -1453,12 +1501,6 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((donvi == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(donvi));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1468,10 +1510,10 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RPKSKTheoDonViReport.GET_TONGHOP_THEODONVIDataTable GetData(global::System.Nullable<global::System.DateTime> tungay, global::System.Nullable<global::System.DateTime> denngay, string donvi) {
+        public virtual PhanLoaiKSKReport.GET_TONGHOP_PHANLOAI_KSKDataTable GetData(global::System.Nullable<global::System.DateTime> tungay, global::System.Nullable<global::System.DateTime> denngay) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((tungay.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(tungay.Value));
@@ -1485,13 +1527,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((donvi == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(donvi));
-            }
-            RPKSKTheoDonViReport.GET_TONGHOP_THEODONVIDataTable dataTable = new RPKSKTheoDonViReport.GET_TONGHOP_THEODONVIDataTable();
+            PhanLoaiKSKReport.GET_TONGHOP_PHANLOAI_KSKDataTable dataTable = new PhanLoaiKSKReport.GET_TONGHOP_PHANLOAI_KSKDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1514,7 +1550,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         private global::System.Data.IDbConnection _connection;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public UpdateOrderOption UpdateOrder {
             get {
                 return this._updateOrder;
@@ -1525,7 +1561,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -1536,7 +1572,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         public global::System.Data.IDbConnection Connection {
             get {
@@ -1551,7 +1587,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         public int TableAdapterInstanceCount {
             get {
@@ -1564,8 +1600,8 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(RPKSKTheoDonViReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateUpdatedRows(PhanLoaiKSKReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1574,8 +1610,8 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(RPKSKTheoDonViReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateInsertedRows(PhanLoaiKSKReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1584,8 +1620,8 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(RPKSKTheoDonViReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateDeletedRows(PhanLoaiKSKReport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1594,7 +1630,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         ///Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             if (((updatedRows == null) 
                         || (updatedRows.Length < 1))) {
@@ -1618,8 +1654,8 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(RPKSKTheoDonViReport dataSet) {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public virtual int UpdateAll(PhanLoaiKSKReport dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -1729,13 +1765,13 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected virtual void SortSelfReferenceRows(global::System.Data.DataRow[] rows, global::System.Data.DataRelation relation, bool childFirst) {
             global::System.Array.Sort<global::System.Data.DataRow>(rows, new SelfReferenceComparer(relation, childFirst));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         protected virtual bool MatchTableAdapterConnection(global::System.Data.IDbConnection inputConnection) {
             if ((this._connection != null)) {
                 return true;
@@ -1753,7 +1789,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         /// <summary>
         ///Update Order Option
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public enum UpdateOrderOption {
             
             InsertUpdateDelete = 0,
@@ -1764,7 +1800,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
         /// <summary>
         ///Used to sort self-referenced table's rows
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private class SelfReferenceComparer : object, global::System.Collections.Generic.IComparer<global::System.Data.DataRow> {
             
             private global::System.Data.DataRelation _relation;
@@ -1772,7 +1808,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
             private int _childFirst;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal SelfReferenceComparer(global::System.Data.DataRelation relation, bool childFirst) {
                 this._relation = relation;
                 if (childFirst) {
@@ -1784,7 +1820,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private global::System.Data.DataRow GetRoot(global::System.Data.DataRow row, out int distance) {
                 global::System.Diagnostics.Debug.Assert((row != null));
                 global::System.Data.DataRow root = row;
@@ -1823,7 +1859,7 @@ namespace benhxaCA.Report.RPKSKTheoDonViReportTableAdapters {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Compare(global::System.Data.DataRow row1, global::System.Data.DataRow row2) {
                 if (object.ReferenceEquals(row1, row2)) {
                     return 0;

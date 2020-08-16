@@ -34,7 +34,7 @@
         input,select {
             background-color: aqua;
             border: none;
-            height: 30px;
+            height: 25px;
             border-radius: 0.1cm;
         }
     </style>
@@ -67,7 +67,7 @@
 
                                         @foreach (var item in Model)
                                         {
-                                            <option>@item</option> // de test thu 
+                                            <option>@item</option>
                                         }
 
                                     </select>
@@ -87,11 +87,8 @@
                             <tr id="canbo"></tr>
                             <tr>
                                 <td colspan="4" align="center">
-                                    @*<input type="button" name="them" id="them" value="Thêm" class="button_shadow"/>
-                                    <input type="button" name="hienthi" id="hienthi" value="Hiện danh sách" class="button_shadow" />
-                                    <input type="reset" name="huy" id="huy" value="Làm mới" class="button_shadow" />*@
-                                    <button name="them" id="them" class="button_shadow">Thêm</button>
-                                    <button name="hienthi" id="hienthi" class="button_shadow">Hiển thị </button>
+                                    <button name="them" id="them" class="button_shadow" style="border-radius:0.1cm; height: 25px;">Thêm</button>
+                                    <button name="hienthi" id="hienthi" class="button_shadow" style="border-radius:0.1cm; height: 25px;">Hiển thị </button>
                                     <input type="reset" name="huy" id="huy" value="Làm mới" class="button_shadow" />
                                 </td> 
                             </tr>
@@ -103,6 +100,5 @@
 
     </div>
     <div id="danhsachdotkham">
-        @*@Html.Action("danhsachdotkham")*@
     </div>
 </body>

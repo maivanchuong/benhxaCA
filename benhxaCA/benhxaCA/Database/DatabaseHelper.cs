@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 
 namespace benhxaCA.Database
 {
@@ -104,7 +103,8 @@ namespace benhxaCA.Database
                 }
                 CloseConnection();
                 return ma;
-            }else
+            }
+            else
             {
                 return null;
             }
@@ -124,7 +124,7 @@ namespace benhxaCA.Database
                 {
                     dotkhamsuckhoe dksk = new dotkhamsuckhoe();
 
-                    dksk.dksk_stt =(int)r[0];
+                    dksk.dksk_stt = (int)r[0];
                     dksk.dksk_ngaykham = r[1].ToString();
                     dksk.dksk_madv = r[2].ToString();
                     dksk.dksk_loaikham = r[3].ToString();
@@ -194,7 +194,8 @@ namespace benhxaCA.Database
                         }
                     }
                     CloseConnection();
-                }else
+                }
+                else
                 {
                     return new List<thongtincanbo>();
                 }
@@ -214,8 +215,8 @@ namespace benhxaCA.Database
             bool check = true;
 
             if (Get_danhsachmacanbodakham(ngaydotkham, dv).Count > 0) check = false;
-            if (ngaydotkham=="") check = false;
-            if (Get_stt_dksk(ma, ngaydotkham)=="") check = false;
+            if (ngaydotkham == "") check = false;
+            if (Get_stt_dksk(ma, ngaydotkham) == "") check = false;
 
             try
             {
@@ -260,7 +261,8 @@ namespace benhxaCA.Database
                         cb.Add(ttcb);
                     }
                     CloseConnection();
-                }else
+                }
+                else
                 {
                     return new List<thongtincanbo>();
                 }
@@ -276,58 +278,60 @@ namespace benhxaCA.Database
         {
             OpenConnection();
             bool check = true;
-            string sttdk ="";
+            string sttdk = "";
             List<string> macb = new List<string>();
-            if (Get_madonvi(tendonvi)=="")
+            if (Get_madonvi(tendonvi) == "")
             {
                 check = false;
-            }else
+            }
+            else
             {
                 string ma = Get_madonvi(tendonvi);
                 sttdk = Get_stt_dksk(ma, ngaydotkham);
-                if (sttdk=="") check = false;
+                if (sttdk == "") check = false;
                 if (Get_dotkhamsuckhoe_by(ngaydotkham, ma).Count() == 0) check = false;
-                if (ngaydotkham=="") check = false;
+                if (ngaydotkham == "") check = false;
             }
             if (check)
-              {
-                    OpenConnection();
-                    SqlCommand cmd = new SqlCommand("GET_DSMACANBODAKHAM", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(
-                        new SqlParameter()
-                        {
-                            ParameterName = "@stt",
-                            SqlDbType = SqlDbType.NVarChar,
-                            Value = sttdk
-                        }
-                    );
-                    cmd.Parameters.Add(
-                        new SqlParameter()
-                        {
-                            ParameterName = "@ngaykham",
-                            SqlDbType = SqlDbType.NVarChar,
-                            Value = ngaydotkham
-                        }
-                    );
-                    SqlDataReader r1 = cmd.ExecuteReader();
-                    
-                    while (r1.Read())
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("GET_DSMACANBODAKHAM", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(
+                    new SqlParameter()
                     {
-                        macb.Add(r1[0].ToString());
+                        ParameterName = "@stt",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = sttdk
                     }
-                    CloseConnection();
-                    return macb;
-                }else
+                );
+                cmd.Parameters.Add(
+                    new SqlParameter()
+                    {
+                        ParameterName = "@ngaykham",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = ngaydotkham
+                    }
+                );
+                SqlDataReader r1 = cmd.ExecuteReader();
+
+                while (r1.Read())
                 {
-                    return new List<string>();
+                    macb.Add(r1[0].ToString());
                 }
+                CloseConnection();
+                return macb;
+            }
+            else
+            {
+                return new List<string>();
+            }
         }
-        
+
         public DataSet Get_tong_hop(string macb)
         {
-            
-            if (OpenConnection() && macb!="")
+
+            if (OpenConnection() && macb != "")
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_TONGHOP", conn);
@@ -344,7 +348,8 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
@@ -407,7 +412,7 @@ namespace benhxaCA.Database
             List<thongtincanbo> cb = new List<thongtincanbo>();
             bool check = true;
             if (ngaydotkham == "") check = false;
-            if(Get_dscb_dakham_tuphat(ngaydotkham).Count!=0) check=false;
+            if (Get_dscb_dakham_tuphat(ngaydotkham).Count != 0) check = false;
             try
             {
                 if (check)
@@ -458,7 +463,7 @@ namespace benhxaCA.Database
         }
         public DataSet Get_thong_tin_cb(string macb)
         {
-            if (OpenConnection() && macb!="")
+            if (OpenConnection() && macb != "")
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_THONGTINCANBO", conn);
@@ -475,18 +480,19 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-            
-            
+
+
         }
-        public List<dotkhamsuckhoe> Get_dotkhamsuckhoe_by(string ngaykham,string madv)
+        public List<dotkhamsuckhoe> Get_dotkhamsuckhoe_by(string ngaykham, string madv)
         {
             bool check = true;
-            if (ngaykham=="") check = false;
-            if (madv=="") check = false;
+            if (ngaykham == "") check = false;
+            if (madv == "") check = false;
             if (OpenConnection() && check)
             {
                 SqlCommand cmd = new SqlCommand("GET_DOTKHAMSUCKHOE_BY", conn);
@@ -535,8 +541,8 @@ namespace benhxaCA.Database
         public string Get_stt_dksk(string madv, string ngaykham)
         {
             bool check = true;
-            if (ngaykham=="") check = false;
-            if (madv=="") check = false;
+            if (ngaykham == "") check = false;
+            if (madv == "") check = false;
             if (OpenConnection() && check)
             {
                 SqlCommand cmd = new SqlCommand("GET_STT_DKSK", conn);
@@ -545,7 +551,7 @@ namespace benhxaCA.Database
                     new SqlParameter()
                     {
                         ParameterName = "@madv",
-                        SqlDbType = SqlDbType.NVarChar ,
+                        SqlDbType = SqlDbType.NVarChar,
                         Value = madv
                     }
                 );
@@ -565,18 +571,19 @@ namespace benhxaCA.Database
                 }
                 CloseConnection();
                 return stt;
-            }else
+            }
+            else
             {
                 return "";
             }
 
 
         }
-        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_all(string tungay,string denngay)
+        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_all(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
             if (OpenConnection() && check)
             {
                 SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_ALL", conn);
@@ -621,8 +628,8 @@ namespace benhxaCA.Database
         public List<tinhhinhksk> Get_tinhhinhksk_tuphat_all(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
             if (OpenConnection() && check)
             {
                 SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_TU_PHAT_ALL", conn);
@@ -637,11 +644,11 @@ namespace benhxaCA.Database
                 );
                 cmd.Parameters.Add(
                  new SqlParameter()
-                     {
-                         ParameterName = "@denngay",
-                         SqlDbType = SqlDbType.NVarChar,
-                         Value = denngay
-                     }
+                 {
+                     ParameterName = "@denngay",
+                     SqlDbType = SqlDbType.NVarChar,
+                     Value = denngay
+                 }
                 );
                 SqlDataReader r = cmd.ExecuteReader();
                 List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
@@ -664,16 +671,14 @@ namespace benhxaCA.Database
 
         }
 
-        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_by_donvi(string tungay, string denngay,string donvi)
+        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_by_donvi(string tungay, string denngay, string donvi)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if (donvi=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (donvi == "") check = false;
             if (OpenConnection() && check)
             {
-                //string sql = $"select dksk_stt,Convert(varchar(10),CONVERT(date,dksk_ngaykham,106),103) AS dksk_ngaykham,dksk_madv,dksk_loaikham,dksk_ghichu from dotkhamsuckhoe where dksk_ngaykham='{ngaykham}' and dksk_madv=N'{madv}'";
-                //SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_BYDONVI", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
@@ -694,11 +699,11 @@ namespace benhxaCA.Database
                 );
                 cmd.Parameters.Add(
                 new SqlParameter()
-                    {
-                        ParameterName = "@donvi",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = donvi
-                    }
+                {
+                    ParameterName = "@donvi",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Value = donvi
+                }
                 );
                 SqlDataReader r = cmd.ExecuteReader();
                 List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
@@ -724,9 +729,9 @@ namespace benhxaCA.Database
         public List<tinhhinhksk> Get_tinhhinhksk_tuphat_by_donvi(string tungay, string denngay, string donvi)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if (donvi=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (donvi == "") check = false;
             if (OpenConnection() && check)
             {
                 //string sql = $"select dksk_stt,Convert(varchar(10),CONVERT(date,dksk_ngaykham,106),103) AS dksk_ngaykham,dksk_madv,dksk_loaikham,dksk_ghichu from dotkhamsuckhoe where dksk_ngaykham='{ngaykham}' and dksk_madv=N'{madv}'";
@@ -781,8 +786,8 @@ namespace benhxaCA.Database
         public List<tinhhinhksk> Get_tinhhinhksk_all(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
             if (OpenConnection() && check)
             {
                 //string sql = $"select dksk_stt,Convert(varchar(10),CONVERT(date,dksk_ngaykham,106),103) AS dksk_ngaykham,dksk_madv,dksk_loaikham,dksk_ghichu from dotkhamsuckhoe where dksk_ngaykham='{ngaykham}' and dksk_madv=N'{madv}'";
@@ -837,7 +842,7 @@ namespace benhxaCA.Database
                      Value = denngay
                  }
              );
-                
+
                 SqlDataReader r1 = cmd1.ExecuteReader();
                 while (r1.Read())
                 {
@@ -858,12 +863,12 @@ namespace benhxaCA.Database
 
         }
 
-        public List<tinhhinhksk> Get_tinhhinhksk_all_bydonvi(string tungay, string denngay,string donvi)
+        public List<tinhhinhksk> Get_tinhhinhksk_all_bydonvi(string tungay, string denngay, string donvi)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if (donvi=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (donvi == "") check = false;
             if (OpenConnection() && check)
             {
                 //string sql = $"select dksk_stt,Convert(varchar(10),CONVERT(date,dksk_ngaykham,106),103) AS dksk_ngaykham,dksk_madv,dksk_loaikham,dksk_ghichu from dotkhamsuckhoe where dksk_ngaykham='{ngaykham}' and dksk_madv=N'{madv}'";
@@ -951,11 +956,11 @@ namespace benhxaCA.Database
             }
 
         }
-        public DataSet Get_tong_hop_ksk(string tungay,string denngay)
+        public DataSet Get_tong_hop_ksk(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
             if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
@@ -981,18 +986,19 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-          
+
         }
         public DataSet Get_tonghopphanloai_ksk(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if(OpenConnection() && check)
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_TONGHOP_PHANLOAI_KSK", conn);
@@ -1017,19 +1023,20 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-            
+
         }
 
         public DataSet Get_baocaoksk_theodot_dky(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if(OpenConnection() && check)
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_DINHKY", conn);
@@ -1054,18 +1061,19 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-            
+
         }
         public DataSet Get_baocaoksk_theodot_tuphat(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if(OpenConnection() && check)
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_TUPHAT", conn);
@@ -1095,14 +1103,14 @@ namespace benhxaCA.Database
             {
                 return new DataSet();
             }
-           
+
         }
         public DataSet Get_baocaoksk_theoloaikham(string tungay, string denngay)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if(OpenConnection() && check)
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_TONGHOP_LOAIKHAM", conn);
@@ -1127,19 +1135,20 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-            
+
         }
         public DataSet Get_baocaoksk_theodonvi(string tungay, string denngay, string donvi)
         {
             bool check = true;
-            if (tungay=="") check = false;
-            if (denngay=="") check = false;
-            if(donvi=="") check = false;
-            if(OpenConnection() && check)
+            if (tungay == "") check = false;
+            if (denngay == "") check = false;
+            if (donvi == "") check = false;
+            if (OpenConnection() && check)
             {
                 DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand("GET_TONGHOP_THEODONVI", conn);
@@ -1172,18 +1181,19 @@ namespace benhxaCA.Database
                 adpt.Fill(ds);
                 CloseConnection();
                 return ds;
-            }else
+            }
+            else
             {
                 return new DataSet();
             }
-            
+
         }
         public List<thongtincanbo> get_canbo(string madv)
         {
             List<thongtincanbo> cb = new List<thongtincanbo>();
             try
             {
-                if (madv!="")
+                if (madv != "")
                 {
                     OpenConnection();
                     SqlCommand cmd = new SqlCommand("GET_DSCANBO_BYMADV", conn);
@@ -1264,20 +1274,18 @@ namespace benhxaCA.Database
         //-----------------------------------------------------------INSERT----------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------
         //Thêm đợt khám sức khỏe định kỳ
-        public void Insert_dotkhamsuckhoe_dinhky(string tendonvi, string ngay,string loai, string ghichu)
+        public void Insert_dotkhamsuckhoe_dinhky(string tendonvi, string ngay, string loai, string ghichu)
         {
             bool check = true;
             string ma = "";
-            if (tendonvi=="")
-                { check = false; }
+            if (tendonvi == "")
+            { check = false; }
             else
-                { ma = Get_madonvi(tendonvi);}
-            if (ngay=="") check = false;
-            if (loai=="") check = false;
+            { ma = Get_madonvi(tendonvi); }
+            if (ngay == "") check = false;
+            if (loai == "") check = false;
             if (OpenConnection() && check)
             {
-                //string sql2 = $"INSERT INTO dotkhamsuckhoe (dksk_ngaykham ,dksk_madv ,dksk_loaikham ,dksk_ghichu) VALUES  ('{ngay}',N'{ma}' ,DEFAULT ,N'{ghichu}')";
-                //SqlCommand cmd2 = new SqlCommand(sql2, conn);
                 SqlCommand cmd = new SqlCommand("SET_DOTKHAMSUCKHOE_DINHKY", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
@@ -1322,7 +1330,7 @@ namespace benhxaCA.Database
 
         }
         //Thêm đợt khám sức khỏe tự phát
-        public void Insert_dotkhamsuckhoe_tuphat(string tendonvi, string ngaykham, string loaikham,string idcanbo, string note)
+        public void Insert_dotkhamsuckhoe_tuphat(string tendonvi, string ngaykham, string loaikham, string idcanbo, string note)
         {
             bool check = true;
             string madv = "";
@@ -1353,14 +1361,14 @@ namespace benhxaCA.Database
                         Value = madv
                     }
                 );
-                 cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@loai",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = loaikham
-                    }
-                );
+                cmd.Parameters.Add(
+                   new SqlParameter()
+                   {
+                       ParameterName = "@loai",
+                       SqlDbType = SqlDbType.NVarChar,
+                       Value = loaikham
+                   }
+               );
                 cmd.Parameters.Add(
                    new SqlParameter()
                    {

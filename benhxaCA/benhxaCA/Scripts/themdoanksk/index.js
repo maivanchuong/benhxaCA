@@ -87,8 +87,6 @@
             var ngaykham = $("#ngaykham").val();
             var loai =$(".loaikham:checked").val();
             var ghichu = $("#ghichu").val();
-            //var btn = $("#hoten");
-            //var name = btn.data('tencb');
             var name = $("#tencanbo").val();
             if (ghichu == "")
                 ghichu = " ";
@@ -106,7 +104,6 @@
                 data: formdata,
                 async: false,
                 success: function (result) {
-                    //success
                     if (result == "Thêm thành công") {
                         alert(result);
                         $("#danhsachdotkham").load("/themdoanksk/danhsachdotkham", {}, function () {

@@ -1,9 +1,6 @@
 ﻿using benhxaCA.Database;
 using benhxaCA.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace benhxaCA.Controllers
@@ -29,22 +26,22 @@ namespace benhxaCA.Controllers
             string ghichu = Request.Form["note"];
             string tencb = Request.Form["tencanbo"];
             DatabaseHelper db = new DatabaseHelper();
-            if (loai == "Khám sức khỏe định kỳ" && nk!="")
+            if (loai == "Khám sức khỏe định kỳ" && nk != "")
             {
                 db.Insert_dotkhamsuckhoe_dinhky(dvk, nk, loai, ghichu);
                 return Json("Thêm thành công", JsonRequestBehavior.AllowGet);
             }
-            else if(tencb != "" && loai == "Khám sức khỏe tự phát" && nk != "")
+            else if (tencb != "" && loai == "Khám sức khỏe tự phát" && nk != "")
             {
                 string macb = db.Get_macb(tencb);
-                db.Insert_dotkhamsuckhoe_tuphat(dvk, nk, loai, macb,ghichu);
+                db.Insert_dotkhamsuckhoe_tuphat(dvk, nk, loai, macb, ghichu);
                 return Json("Thêm thành công", JsonRequestBehavior.AllowGet);
             }
             else
             {
                 return Json("Thêm không thành công", JsonRequestBehavior.AllowGet);
             }
-            
+
 
         }
 
@@ -53,7 +50,7 @@ namespace benhxaCA.Controllers
             DatabaseHelper db = new DatabaseHelper();
             db.Get_dotkhamsuckhoe();
             List<dotkhamsuckhoe> dksk = new List<dotkhamsuckhoe>();
-            dksk = db.Get_dotkhamsuckhoe();            
+            dksk = db.Get_dotkhamsuckhoe();
             return PartialView("_danhsachdotkham", dksk);
         }
         public JsonResult get_canbo()
@@ -63,16 +60,16 @@ namespace benhxaCA.Controllers
             DatabaseHelper db = new DatabaseHelper();
             List<thongtincanbo> ttcb = new List<thongtincanbo>();
             string madv = db.Get_madonvi(dvk);
-                if(loai=="Khám sức khỏe tự phát")
-                {
-                    ttcb = db.get_canbo(madv);
+            if (loai == "Khám sức khỏe tự phát")
+            {
+                ttcb = db.get_canbo(madv);
                 return Json(ttcb, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
+            }
+            else
+            {
                 return Json("Không có dữ liệu", JsonRequestBehavior.AllowGet);
-                }
+            }
         }
     }
-    
+
 }
