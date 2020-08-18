@@ -27,8 +27,8 @@
                             html += '<td>' + item.ttcb_gioitinh + '</td>';
                             html += '<td>' + item.ttcb_ngaysinh + '</td>';
                             //html += '<td><a href="#" onclick="return get_baocao(' + item.ttcb_id + ')" class="btn-baocao" target="_blank">Tạo báo cáo</a> </td>';
-                            html += '<td><a href="#" data-macb=' + item.ttcb_id + ' class="btn-baocao" target="_blank"><img src="../img/reports.png" width="20" height="20"/></a> </td>';
-                            html += '<td><a href="#" data-macb=' + item.ttcb_id + ' class="btn-thongtincanhan" target="_blank"><img src="../img/vcard.png" width="20" height="20"/></a> </td>';
+                            html += '<td align="center"><a href="#" data-macb=' + item.ttcb_id + ' class="btn-baocao" target="_blank"><img src="../img/reports.png" width="20" height="20"/></a> </td>';
+                            html += '<td align="center"><a href="#" data-macb=' + item.ttcb_id + ' class="btn-thongtincanhan" target="_blank"><img src="../img/vcard.png" width="20" height="20"/></a> </td>';
                             //html += '<td><button data-macb="' + item.ttcb_id + '" class="btn-thongtincanhan">In thông tin cá nhân</button> </td>';
                             //html += '<td><button data-macb="' + item.ttcb_id + '" class="btn-baocao">Tạo báo cáo khám bệnh</button> </td>';
                             html += '</tr>';
@@ -43,7 +43,7 @@
                             html += '<td>' + item.ttcb_ngaysinh + '</td>';
                             //html += '<td><a href="#" onclick="return get_baocao(' + item.ttcb_id + ')" class="btn-baocao" target="_blank">Tạo báo cáo</a> </td>';
                             //html += '<td><a href="#" data-macb=' + item.ttcb_id + ' class="btn-baocao" target="_blank"><img src="../img/reports.png" width="20" height="20"/></a> </td>';
-                            html += '<td><a href="#" data-macb=' + item.ttcb_id + ' class="btn-thongtincanhan" target="_blank"><img src="../img/vcard.png" width="20" height="20"/></a> </td>';
+                            html += '<td align="center"><a href="#" data-macb=' + item.ttcb_id + ' class="btn-thongtincanhan" target="_blank"><img src="../img/vcard.png" width="20" height="20"/></a> </td>';
                             //html += '<td><button data-macb="' + item.ttcb_id + '" class="btn-thongtincanhan">In thông tin cá nhân</button> </td>';
                             //html += '<td><button data-macb="' + item.ttcb_id + '" class="btn-baocao">Tạo báo cáo khám bệnh</button> </td>';
                             html += '</tr>';
