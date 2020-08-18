@@ -15,8 +15,10 @@ namespace benhxaCA.Controllers
         {
             return View();
         }
+        //Khởi tạo các tham số cho báo cáo và lưu vào Model Session ReportParams
         public JsonResult danhsachcanbo()
         {
+            //Lấy dữ liệu được gửi từ ajax sang
             string nk = Request.Form["ngay"];
             string status = Request.Form["status"];
             DatabaseHelper db = new DatabaseHelper();

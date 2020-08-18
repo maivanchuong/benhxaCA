@@ -38,7 +38,7 @@ namespace benhxaCA.Database
                 conn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -64,15 +64,16 @@ namespace benhxaCA.Database
                     {
                         dv.Add(r[0].ToString());
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                     return dv;
                 }
                 else
                 {
+                    //Không có dữ liệu thì trả về sanh sách rỗng
                     return new List<string>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new System.ArgumentException("Không lấy được đơn vị");
             }
@@ -101,11 +102,12 @@ namespace benhxaCA.Database
                 {
                     ma = r1[0].ToString();
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ma;
             }
             else
             {
+                //Không có dữ liệu thì trả về sanh sách rỗng
                 return null;
             }
 
@@ -133,11 +135,12 @@ namespace benhxaCA.Database
 
                     dv.Add(dksk);
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return dv;
             }
             else
             {
+                //Không có dữ liệu thì trả về sanh sách rỗng
                 return new List<dotkhamsuckhoe>();
             }
 
@@ -154,7 +157,8 @@ namespace benhxaCA.Database
                 {
                     foreach (string idcb in listmacb)
                     {
-                        OpenConnection();
+                        OpenConnection(); // //Mở kết nối với SQL Server
+                        //Gọi Procedure trong SQLServer
                         SqlCommand cmd = new SqlCommand("GET_DSCANBODAKHAM", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(
@@ -193,14 +197,15 @@ namespace benhxaCA.Database
                             dscb.Add(ttcb);
                         }
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
+                    //Không có dữ liệu thì trả về danh sách rỗng
                     return new List<thongtincanbo>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NullReferenceException("Không có dữ liệu");
             }
@@ -210,19 +215,18 @@ namespace benhxaCA.Database
         //Lay danh sach can bo cho kham
         public List<thongtincanbo> Get_dscb_chokham(string ngaydotkham, string dv)
         {
-            string ma = Get_madonvi(dv);
-            List<thongtincanbo> cb = new List<thongtincanbo>();
-            bool check = true;
-
+            string ma = Get_madonvi(dv); //Lấy mã đơn vị từ tên đơn vị được gửi từ Controller sang
+            List<thongtincanbo> cb = new List<thongtincanbo>(); // Tạo list để lấy danh sách dữ liệu ra
+            bool check = true; 
             if (Get_danhsachmacanbodakham(ngaydotkham, dv).Count > 0) check = false;
-            if (/*ngaydotkham.Equals(string.Empty)*/ ngaydotkham.Equals(string.Empty)) check = false;
+            if (ngaydotkham.Equals(string.Empty)) check = false;
             if (Get_stt_dksk(ma, ngaydotkham).Equals(string.Empty)) check = false;
-
             try
             {
                 if (check)
                 {
-                    OpenConnection();
+                    OpenConnection(); // //Mở kết nối với SQL Server //Mở kết nối với SQL Server
+                    //Gọi Procedure trong SQLServer
                     SqlCommand cmd = new SqlCommand("GET_DSCANBOCHOKHAM", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(
@@ -260,14 +264,14 @@ namespace benhxaCA.Database
                         ttcb.ttcb_hinhanh = r[12].ToString();
                         cb.Add(ttcb);
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
                     return new List<thongtincanbo>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new System.NullReferenceException("Không có dữ liệu");
             }
@@ -276,7 +280,7 @@ namespace benhxaCA.Database
         //Lay ma danh sach can bo da kham
         public List<string> Get_danhsachmacanbodakham(string ngaydotkham, string tendonvi)
         {
-            OpenConnection();
+            OpenConnection(); // //Mở kết nối với SQL Server
             bool check = true;
             string sttdk = "";
             List<string> macb = new List<string>();
@@ -294,8 +298,8 @@ namespace benhxaCA.Database
             }
             if (check)
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("GET_DSMACANBODAKHAM", conn);
+                OpenConnection(); // //Mở kết nối với SQL Server
+                SqlCommand cmd = new SqlCommand("GET_DSMACANBODAKHAM", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -319,22 +323,22 @@ namespace benhxaCA.Database
                 {
                     macb.Add(r1[0].ToString());
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return macb;
             }
             else
             {
-                return new List<string>();
+                return new List<string>(); //Không có dữ liệu thì trả về danh sách rỗng
             }
         }
-
+        //Lấy ra thông tin khám sức khỏe tổng hợp của cán bộ
         public DataSet Get_tong_hop(string macb)
         {
 
             if (OpenConnection() && !macb.Equals(string.Empty))
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_TONGHOP", conn);
+                DataSet ds = new DataSet(); //Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_TONGHOP", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -346,25 +350,26 @@ namespace benhxaCA.Database
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                 adpt.Fill(ds);
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet(); //Không có dữ liệu thì trả về danh sách rỗng
             }
         }
-        public List<thongtincanbo> Get_dscb_dakham_tuphat(string ngaydotkham)
+        //Lấy ra danh sách thông tin cán bộ khám sức khỏe tự phát ĐÃ KHÁM theo ngày
+        public List<thongtincanbo> Get_dscb_dakham_tuphat(string ngaydotkham) 
         {
-            List<thongtincanbo> cb = new List<thongtincanbo>();
+            List<thongtincanbo> cb = new List<thongtincanbo>(); // Tạo list để lấy danh sách dữ liệu ra
             bool check = true;
             if (ngaydotkham.Equals(string.Empty)) check = false;
             try
             {
                 if (check)
                 {
-                    OpenConnection();
-                    SqlCommand cmd = new SqlCommand("GET_DSCANBODAKHAM_TUPHAT", conn);
+                    OpenConnection(); // //Mở kết nối với SQL Server
+                    SqlCommand cmd = new SqlCommand("GET_DSCANBODAKHAM_TUPHAT", conn); //Gọi Procedure trong SQLServer
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(
                        new SqlParameter()
@@ -377,7 +382,7 @@ namespace benhxaCA.Database
                     SqlDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        thongtincanbo ttcb = new thongtincanbo();
+                        thongtincanbo ttcb = new thongtincanbo(); // //Tạo object để chứa từng Row dữ liệu khi foreach
                         ttcb.ttcb_id = r[0].ToString();
                         ttcb.ttcb_madv = r[1].ToString();
                         ttcb.ttcb_macv = r[2].ToString();
@@ -391,25 +396,26 @@ namespace benhxaCA.Database
                         ttcb.ttcb_dantoc = r[10].ToString();
                         ttcb.ttcb_sodienthoai = r[11].ToString();
                         ttcb.ttcb_hinhanh = r[12].ToString();
-                        cb.Add(ttcb);
+                        cb.Add(ttcb); //Thêm dữ liệu vào danh sách cb từ object
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
-                    return new List<thongtincanbo>();
+                    return new List<thongtincanbo>(); //Không có dữ liệu thì trả về danh sách rỗng
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new System.NullReferenceException("Không có dữ liệu");
             }
             return cb;
 
         }
+        //Lấy ra danh sách thông tin cán bộ khám sức khỏe tự phát CHỜ KHÁM theo ngày
         public List<thongtincanbo> Get_dscb_chokham_tuphat(string ngaydotkham)
         {
-            List<thongtincanbo> cb = new List<thongtincanbo>();
+            List<thongtincanbo> cb = new List<thongtincanbo>(); // Tạo list để lấy danh sách dữ liệu ra
             bool check = true;
             if (ngaydotkham.Equals(string.Empty)) check = false;
             if (Get_dscb_dakham_tuphat(ngaydotkham).Count != 0) check = false;
@@ -417,8 +423,8 @@ namespace benhxaCA.Database
             {
                 if (check)
                 {
-                    OpenConnection();
-                    SqlCommand cmd = new SqlCommand("GET_DSCANBOCHOKHAM_TUPHAT", conn);
+                    OpenConnection(); // //Mở kết nối với SQL Server
+                    SqlCommand cmd = new SqlCommand("GET_DSCANBOCHOKHAM_TUPHAT", conn); //Gọi Procedure trong SQLServer
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(
                        new SqlParameter()
@@ -431,7 +437,7 @@ namespace benhxaCA.Database
                     SqlDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        thongtincanbo ttcb = new thongtincanbo();
+                        thongtincanbo ttcb = new thongtincanbo(); //Tạo object để chứa từng Row dữ liệu khi foreach
                         ttcb.ttcb_id = r[0].ToString();
                         ttcb.ttcb_madv = r[1].ToString();
                         ttcb.ttcb_macv = r[2].ToString();
@@ -445,28 +451,29 @@ namespace benhxaCA.Database
                         ttcb.ttcb_dantoc = r[10].ToString();
                         ttcb.ttcb_sodienthoai = r[11].ToString();
                         ttcb.ttcb_hinhanh = r[12].ToString();
-                        cb.Add(ttcb);
+                        cb.Add(ttcb); //Thêm oject vào list cb
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
-                    return new List<thongtincanbo>();
+                    return new List<thongtincanbo>(); //Không có dữ liệu thì trả về danh sách rỗng
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new System.NullReferenceException("Không có dữ liệu");
             }
             return cb;
 
         }
+        //Lấy ra toàn bộ thông tin của cán bộ với tham số là mã cán bộ
         public DataSet Get_thong_tin_cb(string macb)
         {
             if (OpenConnection() && !macb.Equals(string.Empty))
             {
                 DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_THONGTINCANBO", conn);
+                SqlCommand cmd = new SqlCommand("GET_THONGTINCANBO", conn);  //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -477,17 +484,18 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds); //Đổ dữ liệu vào DataSet ds
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet(); //Không có dữ liệu thì trả về danh sách rỗng
             }
 
 
         }
+        //Lấy ra thông tin đợt khám với tham số là mã đơn vị và ngày khám
         public List<dotkhamsuckhoe> Get_dotkhamsuckhoe_by(string ngaykham, string madv)
         {
             bool check = true;
@@ -495,7 +503,7 @@ namespace benhxaCA.Database
             if (madv.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                SqlCommand cmd = new SqlCommand("GET_DOTKHAMSUCKHOE_BY", conn);
+                SqlCommand cmd = new SqlCommand("GET_DOTKHAMSUCKHOE_BY", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -514,10 +522,10 @@ namespace benhxaCA.Database
                      }
                 );
                 SqlDataReader r = cmd.ExecuteReader();
-                List<dotkhamsuckhoe> dv = new List<dotkhamsuckhoe>();
+                List<dotkhamsuckhoe> dv = new List<dotkhamsuckhoe>(); // Tạo list để lấy danh sách dữ liệu ra
                 while (r.Read())
                 {
-                    dotkhamsuckhoe dksk = new dotkhamsuckhoe();
+                    dotkhamsuckhoe dksk = new dotkhamsuckhoe(); //Tạo object để chứa từng Row dữ liệu khi foreach
 
                     dksk.dksk_stt = (int)r[0];
                     dksk.dksk_ngaykham = r[1].ToString();
@@ -525,19 +533,18 @@ namespace benhxaCA.Database
                     dksk.dksk_loaikham = r[3].ToString();
                     dksk.dksk_macb = r[4].ToString();
                     dksk.dksk_ghichu = r[5].ToString();
-
-                    dv.Add(dksk);
+                    dv.Add(dksk); //Thêm object vào danh sách dv
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return dv;
             }
             else
             {
-                return new List<dotkhamsuckhoe>();
+                return new List<dotkhamsuckhoe>(); //Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
-
+        //Lấy ra số mã đợt khám từ tham só mã đơn vị và ngày khám 
         public string Get_stt_dksk(string madv, string ngaykham)
         {
             bool check = true;
@@ -545,7 +552,7 @@ namespace benhxaCA.Database
             if (madv.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                SqlCommand cmd = new SqlCommand("GET_STT_DKSK", conn);
+                SqlCommand cmd = new SqlCommand("GET_STT_DKSK", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -569,387 +576,17 @@ namespace benhxaCA.Database
                 {
                     stt = r1[0].ToString();
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return stt;
             }
             else
             {
-                return "";
+                return ""; //Không có dữ liệu thì trả về danh sách rỗng
             }
 
 
         }
-        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_all(string tungay, string denngay)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_ALL", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@denngay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = denngay
-                    }
-             );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
-
-        public List<tinhhinhksk> Get_tinhhinhksk_tuphat_all(string tungay, string denngay)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_TU_PHAT_ALL", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@denngay",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = denngay
-                 }
-                );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
-
-        public List<tinhhinhksk> Get_tinhhinhksk_dinhky_by_donvi(string tungay, string denngay, string donvi)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (donvi.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_BYDONVI", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@denngay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = denngay
-                    }
-                );
-                cmd.Parameters.Add(
-                new SqlParameter()
-                {
-                    ParameterName = "@donvi",
-                    SqlDbType = SqlDbType.NVarChar,
-                    Value = donvi
-                }
-                );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
-
-        public List<tinhhinhksk> Get_tinhhinhksk_tuphat_by_donvi(string tungay, string denngay, string donvi)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (donvi.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_TUPHAT_BYDONVI", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@denngay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = denngay
-                    }
-                );
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@donvi",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = donvi
-                    }
-                );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
-
-        public List<tinhhinhksk> Get_tinhhinhksk_all(string tungay, string denngay)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_ALL", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@denngay",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = denngay
-                 }
-
-             );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                OpenConnection();
-                SqlCommand cmd1 = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_TU_PHAT_ALL", conn);
-                cmd1.CommandType = CommandType.StoredProcedure;
-                cmd1.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd1.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@denngay",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = denngay
-                 }
-             );
-
-                SqlDataReader r1 = cmd1.ExecuteReader();
-                while (r1.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r1[0].ToString();
-                    ksk.soluot = r1[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
-
-        public List<tinhhinhksk> Get_tinhhinhksk_all_bydonvi(string tungay, string denngay, string donvi)
-        {
-            bool check = true;
-            if (tungay.Equals(string.Empty)) check = false;
-            if (denngay.Equals(string.Empty)) check = false;
-            if (donvi.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
-            {
-                SqlCommand cmd = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_DINH_KY_BYDONVI", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@denngay",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = denngay
-                 }
-             ); cmd.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@donvi",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = donvi
-                 }
-             );
-                SqlDataReader r = cmd.ExecuteReader();
-                List<tinhhinhksk> khamsuckhoe = new List<tinhhinhksk>();
-                while (r.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r[0].ToString();
-                    ksk.soluot = r[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                OpenConnection();
-                SqlCommand cmd1 = new SqlCommand("GET_TINHHINHKHAMSUCKHOE_TUPHAT_BYDONVI", conn);
-                cmd1.CommandType = CommandType.StoredProcedure;
-                cmd1.Parameters.Add(
-                    new SqlParameter()
-                    {
-                        ParameterName = "@tungay",
-                        SqlDbType = SqlDbType.NVarChar,
-                        Value = tungay
-                    }
-                );
-                cmd1.Parameters.Add(
-                 new SqlParameter()
-                 {
-                     ParameterName = "@denngay",
-                     SqlDbType = SqlDbType.NVarChar,
-                     Value = denngay
-                 }
-             );
-                cmd1.Parameters.Add(
-                new SqlParameter()
-                {
-                    ParameterName = "@donvi",
-                    SqlDbType = SqlDbType.NVarChar,
-                    Value = donvi
-                }
-            );
-                SqlDataReader r1 = cmd1.ExecuteReader();
-                while (r1.Read())
-                {
-                    tinhhinhksk ksk = new tinhhinhksk();
-
-                    ksk.loaikham = r1[0].ToString();
-                    ksk.soluot = r1[1].ToString();
-
-                    khamsuckhoe.Add(ksk);
-                }
-                CloseConnection();
-                return khamsuckhoe;
-            }
-            else
-            {
-                return new List<tinhhinhksk>();
-            }
-
-        }
+        //Lấy dữ liệu khám sưc khỏe tổng hợp từ với lời gọi từ Controller : baocaokhamsuckhoeController
         public DataSet Get_tong_hop_ksk(string tungay, string denngay)
         {
             bool check = true;
@@ -957,8 +594,8 @@ namespace benhxaCA.Database
             if (denngay.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_TONGHOPKSK", conn);
+                DataSet ds = new DataSet(); //Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_TONGHOPKSK", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -977,16 +614,17 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds); //Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet(); //Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
+        //Lấy dữ liệu báo cáo khám sức khỏe theo loại
         public DataSet Get_tonghopphanloai_ksk(string tungay, string denngay)
         {
             bool check = true;
@@ -994,8 +632,8 @@ namespace benhxaCA.Database
             if (denngay.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_TONGHOP_PHANLOAI_KSK", conn);
+                DataSet ds = new DataSet(); //Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_TONGHOP_PHANLOAI_KSK", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1014,17 +652,17 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds);//Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet(); //Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
-
+        //Lấy dữ liệu báo cáo khám sức khỏe định kỳ
         public DataSet Get_baocaoksk_theodot_dky(string tungay, string denngay)
         {
             bool check = true;
@@ -1032,8 +670,8 @@ namespace benhxaCA.Database
             if (denngay.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_DINHKY", conn);
+                DataSet ds = new DataSet();//Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_DINHKY", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1052,16 +690,17 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds);//Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet(); //Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
+        //Lấy dữ liệu báo cáo khám sức khỏe tự phát
         public DataSet Get_baocaoksk_theodot_tuphat(string tungay, string denngay)
         {
             bool check = true;
@@ -1069,8 +708,8 @@ namespace benhxaCA.Database
             if (denngay.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_TUPHAT", conn);
+                DataSet ds = new DataSet(); //Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_KSK_THEODOT_TUPHAT", conn);//Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1089,16 +728,17 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds);//Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet();//Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
+        //Lấy dữ liệu báo cáo theo loại khám
         public DataSet Get_baocaoksk_theoloaikham(string tungay, string denngay)
         {
             bool check = true;
@@ -1106,8 +746,8 @@ namespace benhxaCA.Database
             if (denngay.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_TONGHOP_LOAIKHAM", conn);
+                DataSet ds = new DataSet();//Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_TONGHOP_LOAIKHAM", conn);//Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1126,16 +766,17 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds);//Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet();//Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
+        //Lấy dữ liệu báo cáo khám sức khỏe theo từng đơn vị
         public DataSet Get_baocaoksk_theodonvi(string tungay, string denngay, string donvi)
         {
             bool check = true;
@@ -1144,8 +785,8 @@ namespace benhxaCA.Database
             if (donvi.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                DataSet ds = new DataSet();
-                SqlCommand cmd = new SqlCommand("GET_TONGHOP_THEODONVI", conn);
+                DataSet ds = new DataSet();//Tạo DataSet chứa dữ liệu
+                SqlCommand cmd = new SqlCommand("GET_TONGHOP_THEODONVI", conn);//Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1172,25 +813,25 @@ namespace benhxaCA.Database
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                adpt.Fill(ds);
-                CloseConnection();
+                adpt.Fill(ds);//Đổ dữ liệu vào DataSet
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return ds;
             }
             else
             {
-                return new DataSet();
+                return new DataSet();//Không có dữ liệu thì trả về danh sách rỗng
             }
 
         }
         public List<thongtincanbo> get_canbo(string madv)
         {
-            List<thongtincanbo> cb = new List<thongtincanbo>();
+            List<thongtincanbo> cb = new List<thongtincanbo>();// Tạo list để lấy danh sách dữ liệu ra
             try
             {
                 if (!madv.Equals(string.Empty))
                 {
-                    OpenConnection();
-                    SqlCommand cmd = new SqlCommand("GET_DSCANBO_BYMADV", conn);
+                    OpenConnection(); // //Mở kết nối với SQL Server
+                    SqlCommand cmd = new SqlCommand("GET_DSCANBO_BYMADV", conn);//Gọi Procedure trong SQLServer
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(
                        new SqlParameter()
@@ -1203,7 +844,7 @@ namespace benhxaCA.Database
                     SqlDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        thongtincanbo ttcb = new thongtincanbo();
+                        thongtincanbo ttcb = new thongtincanbo(); //Tạo object để chứa từng Row dữ liệu khi foreach
                         ttcb.ttcb_id = r[0].ToString();
                         ttcb.ttcb_madv = r[1].ToString();
                         ttcb.ttcb_macv = r[2].ToString();
@@ -1217,27 +858,27 @@ namespace benhxaCA.Database
                         ttcb.ttcb_dantoc = r[10].ToString();
                         ttcb.ttcb_sodienthoai = r[11].ToString();
                         ttcb.ttcb_hinhanh = r[12].ToString();
-                        cb.Add(ttcb);
+                        cb.Add(ttcb); //Thêm oject vào list cb
                     }
-                    CloseConnection();
+                    CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
-                    return new List<thongtincanbo>();
+                    return new List<thongtincanbo>(); //Không có dữ liệu thì trả về danh sách rỗng
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new System.NullReferenceException("Không có dữ liệu");
             }
             return cb;
         }
-
+        //Lấy mã cán bộ từ tên cán bộ
         public string Get_macb(string tencb)
         {
             if (OpenConnection())
             {
-                SqlCommand cmd = new SqlCommand("GET_MACANBO_BYTENCB", conn);
+                SqlCommand cmd = new SqlCommand("GET_MACANBO_BYTENCB", conn);//Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1253,17 +894,16 @@ namespace benhxaCA.Database
                 {
                     stt = r1[0].ToString();
                 }
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
                 return stt;
             }
             else
             {
-                return "";
+                return "";//Không có dữ liệu thì trả về danh sách rỗng
             }
 
 
         }
-
         //---------------------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------INSERT----------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1275,12 +915,12 @@ namespace benhxaCA.Database
             if (tendonvi.Equals(string.Empty))
             { check = false; }
             else
-            { ma = Get_madonvi(tendonvi); }
+            { ma = Get_madonvi(tendonvi); } //Lấy mã đơn vị khi tên đơn vị khác rỗng
             if (ngay.Equals(string.Empty)) check = false;
             if (loai.Equals(string.Empty)) check = false;
             if (OpenConnection() && check)
             {
-                SqlCommand cmd = new SqlCommand("SET_DOTKHAMSUCKHOE_DINHKY", conn);
+                SqlCommand cmd = new SqlCommand("SET_DOTKHAMSUCKHOE_DINHKY", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1315,7 +955,7 @@ namespace benhxaCA.Database
                     }
                 );
                 cmd.ExecuteNonQuery();
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
             }
             else
             {
@@ -1331,13 +971,13 @@ namespace benhxaCA.Database
             if (tendonvi.Equals(string.Empty))
             { check = false; }
             else
-            { madv = Get_madonvi(tendonvi); }
+            { madv = Get_madonvi(tendonvi); }//Lấy mã đơn vị khi tên đơn vị khác rỗng
             if (ngaykham.Equals(string.Empty)) check = false;
             if (loaikham.Equals(string.Empty)) check = false;
             if (idcanbo.Equals(string.Empty)) check = false;
-            if (OpenConnection() && check)
+            if (OpenConnection() && check) //Mở kết nối với SQL Server và kiểm tra biến check 
             {
-                SqlCommand cmd = new SqlCommand("SET_DOTKHAMSUCKHOE_TUPHAT", conn);
+                SqlCommand cmd = new SqlCommand("SET_DOTKHAMSUCKHOE_TUPHAT", conn); //Gọi Procedure trong SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(
                     new SqlParameter()
@@ -1380,13 +1020,12 @@ namespace benhxaCA.Database
                     }
                 );
                 cmd.ExecuteNonQuery();
-                CloseConnection();
+                CloseConnection(); // Đóng kết nối với SQL Server
             }
             else
             {
                 throw new System.ArgumentException("Không thể thêm đợt khám sức khỏe");
             }
-
         }
     }
 }

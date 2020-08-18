@@ -11,8 +11,7 @@ namespace benhxaCA.Controllers
 {
     public class baocaoksktheodonviController : Controller
     {
-        // GET: baocaoksktheodonvi
-       
+           
         public ActionResult Index()
         {
             //Lấy danh sách tên đơn vị, gửi sang view
@@ -23,7 +22,7 @@ namespace benhxaCA.Controllers
             db.CloseConnection();
             return View(tendonvi);
         }
-            //Khởi tạo các tham số cho báo cáo
+            //Khởi tạo các tham số cho báo cáo và lưu vào Model Session ReportParams
         public JsonResult GetRPKSKTheoDonViReport()
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -51,7 +50,7 @@ namespace benhxaCA.Controllers
             }
 
         }
-        //Lấy data 
+        //Lấy data cho báo cáo đổ vào Dataset
         public DataSet GetInfo(string tn, string dn,string dv)
         {
             DatabaseHelper db = new DatabaseHelper();

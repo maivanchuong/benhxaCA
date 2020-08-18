@@ -11,7 +11,7 @@ namespace benhxaCA.Controllers
 {
     public class khamsuckhoetheodoanController : Controller
     {
-        // GET: khamsuckhoetheodoan
+        //Lấy danh sách tên các đơn vị và chuyển sang View
         public ActionResult Index()
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -22,8 +22,10 @@ namespace benhxaCA.Controllers
             return View(tendonvi);
         }
        // [HttpPost]
+       //Lấy danh sách cán bộ và chuyển sang cho ajax để hiển thị ra View
         public JsonResult _danhsachcanbo()
         {
+            //Lấy dữ liệu được gửi từ ajax sang
             string dvk = Request.Form["dvkham"];
             string nk = Request.Form["ngay"];
             string status = Request.Form["status"];
@@ -46,6 +48,7 @@ namespace benhxaCA.Controllers
             
 
         }
+        //Khởi tạo các tham số cho báo cáo và lưu vào Model Session ReportParams
         public JsonResult GetKhamBenhReport()
         {
             string macb = Request.Form["macb"];
@@ -65,6 +68,7 @@ namespace benhxaCA.Controllers
                 return Json("Không có dữ liệu", JsonRequestBehavior.AllowGet); ;
             }
         }
+        //Lấy data cho báo cáo đổ vào Dataset
         public DataSet GetInfo(string macb)
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -74,6 +78,7 @@ namespace benhxaCA.Controllers
             db.CloseConnection();
             return ds;
         }
+        //Khởi tạo các tham số cho báo cáo và lưu vào Model Session ReportParams
         public JsonResult GetThongTinReport()
         {
             string macb = Request.Form["macb"];
@@ -95,6 +100,7 @@ namespace benhxaCA.Controllers
             }
           
         }
+        //Lấy data cho báo cáo đổ vào Dataset
         public DataSet GetInfoTT(string macb)
         {
             DatabaseHelper db = new DatabaseHelper();

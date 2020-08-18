@@ -16,8 +16,10 @@ namespace benhxaCA.Controllers
         {
             return View();
         }
+        //Khởi tạo các tham số cho báo cáo và lưu vào Model Session ReportParams
         public JsonResult GetRPKSKTheoDotReport_DK()
         {
+            //Lấy dữ liệu được gửi từ ajax sang
             string tn = Request.Form["tungay"];
             string dn = Request.Form["denngay"];
             if (tn != "" && dn != "")
@@ -38,6 +40,7 @@ namespace benhxaCA.Controllers
             }
 
         }
+        //Lấy data cho báo cáo đổ vào Dataset
         public DataSet GetInfo(string tn, string dn)
         {
             DatabaseHelper db = new DatabaseHelper();

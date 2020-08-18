@@ -8,6 +8,7 @@ namespace benhxaCA.Controllers
     public class themdoankskController : Controller
     {
         // GET: themdoanksk
+        //Lấy danh sách tên các đơn vị và chuyển sang View
         public ActionResult Index()
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -17,9 +18,11 @@ namespace benhxaCA.Controllers
             db.CloseConnection();
             return View(tendonvi);
         }
+        //Thực hiện thêm đợt khám sức khỏe
         [HttpPost]
         public ActionResult themdotkham()
         {
+            //Lấy dữ liệu được gửi từ ajax sang
             string dvk = Request.Form["dvkham"];
             string nk = Request.Form["ngay"];
             string loai = Request.Form["loaiksk"];
@@ -44,7 +47,7 @@ namespace benhxaCA.Controllers
 
 
         }
-
+        //Hiển thị ra danh sách đơn khám và gửi sang PartiView
         public ActionResult danhsachdotkham()
         {
             DatabaseHelper db = new DatabaseHelper();
@@ -53,8 +56,10 @@ namespace benhxaCA.Controllers
             dksk = db.Get_dotkhamsuckhoe();
             return PartialView("_danhsachdotkham", dksk);
         }
+        //Lấy danh sách cán bộ dựa vào 2 tham số là đơn vị và loại khám sức khỏe là "Khám sức khỏe tự phát"
         public JsonResult get_canbo()
         {
+            //Lấy dữ liệu được gửi từ ajax sang
             string dvk = Request.Form["dvkham"];
             string loai = Request.Form["loaiksk"];
             DatabaseHelper db = new DatabaseHelper();

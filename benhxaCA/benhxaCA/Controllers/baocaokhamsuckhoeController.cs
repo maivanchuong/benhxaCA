@@ -11,59 +11,11 @@ namespace benhxaCA.Controllers
 {
     public class baocaokhamsuckhoeController : Controller
     {
-        // GET: baocaokhamsuckhoe
         public ActionResult Index()
         {
-            DatabaseHelper db = new DatabaseHelper();
-            db.OpenConnection();
-            List<string> tendonvi = new List<string>();
-            tendonvi = db.Get_donvi();
-            db.CloseConnection();
-            return View(tendonvi);
+            return View();
         }
-        public JsonResult hienthibaocao()
-        {
-            string tn = Request.Form["tungay"];
-            string dn = Request.Form["denngay"];
-            string dv = Request.Form["donvi"];
-            string loai = Request.Form["loaiksk"];
-            DatabaseHelper db = new DatabaseHelper();
-            string ma = db.Get_madonvi(dv);
-            List<tinhhinhksk> ksk = new List<tinhhinhksk>();
-            if(tn != "" && dn != "")
-            {
-                if (loai == "1" && ma == "")
-                {
-                    ksk = db.Get_tinhhinhksk_dinhky_all(tn, dn);
-                }
-                else if (loai == "2" && ma == "")
-                {
-                    ksk = db.Get_tinhhinhksk_tuphat_all(tn, dn);
-                }
-                else if (loai == "1" && dv != "0" && ma != "")
-                {
-                    ksk = db.Get_tinhhinhksk_dinhky_by_donvi(tn, dn, ma);
-                }
-                else if (loai == "2" && dv != "0" && ma != "")
-                {
-                    ksk = db.Get_tinhhinhksk_tuphat_by_donvi(tn, dn, ma);
-                }
-                else if (loai == "0" && ma == "")
-                {
-                    ksk = db.Get_tinhhinhksk_all(tn, dn);
-                }
-                else if (loai == "0" && ma != "")
-                {
-                    ksk = db.Get_tinhhinhksk_all_bydonvi(tn, dn, ma);
-                }
-                return Json(ksk, JsonRequestBehavior.AllowGet);
-            }else
-            {
-                return Json("Xin chọn ngày", JsonRequestBehavior.AllowGet);
-            }
-            
-
-        }
+        //Thêm các thành phần báo cáo vào Session
         public JsonResult GetTongHopKSKReport()
         {
             string tn = Request.Form["tungay"];
@@ -85,6 +37,7 @@ namespace benhxaCA.Controllers
             }
             
         }
+        //Lấy data cho báo cáo đổ vào Dataset
         public DataSet GetInfo(string tn,string dn)
         {
             DatabaseHelper db = new DatabaseHelper();
