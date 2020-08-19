@@ -70,8 +70,10 @@
                 event.preventDefault();
                 var btn = $(this);
                 var id = btn.data('macb')
+                var ngaykham = $("#ngaykhamsuckhoe").val();
                 var formdata = new FormData();
                 formdata.append("macb", id);
+                formdata.append("ngay", ngaykham);
                 $.ajax({
                     url: '/khamsuckhoetheodoan/GetKhamBenhReport',
                     type: "POST",

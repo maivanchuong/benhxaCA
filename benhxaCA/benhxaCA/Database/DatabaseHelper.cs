@@ -58,8 +58,7 @@ namespace benhxaCA.Database
                     SqlCommand cmd = new SqlCommand("GET_TENDONVI", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataReader r = cmd.ExecuteReader();
-                    // Tạo list để lấy danh sách dữ liệu ra
-                    List<string> dv = new List<string>();
+                    List<string> dv = new List<string>();// Tạo list để lấy danh sách dữ liệu ra
                     while (r.Read())
                     {
                         dv.Add(r[0].ToString());
@@ -107,8 +106,7 @@ namespace benhxaCA.Database
             }
             else
             {
-                //Không có dữ liệu thì trả về sanh sách rỗng
-                return null;
+                return null;//Không có dữ liệu thì trả về sanh sách rỗng
             }
 
         }
@@ -124,24 +122,21 @@ namespace benhxaCA.Database
                 List<dotkhamsuckhoe> dv = new List<dotkhamsuckhoe>();
                 while (r.Read())
                 {
-                    dotkhamsuckhoe dksk = new dotkhamsuckhoe();
-
+                    dotkhamsuckhoe dksk = new dotkhamsuckhoe();//Tạo object để chứa từng Row dữ liệu khi foreach
                     dksk.dksk_stt = (int)r[0];
                     dksk.dksk_ngaykham = r[1].ToString();
                     dksk.dksk_madv = r[2].ToString();
                     dksk.dksk_loaikham = r[3].ToString();
                     dksk.dksk_macb = r[4].ToString();
                     dksk.dksk_ghichu = r[5].ToString();
-
-                    dv.Add(dksk);
+                    dv.Add(dksk); //Thêm dữ liệu vào danh sách dv từ object
                 }
                 CloseConnection(); // Đóng kết nối với SQL Server
                 return dv;
             }
             else
             {
-                //Không có dữ liệu thì trả về sanh sách rỗng
-                return new List<dotkhamsuckhoe>();
+                return new List<dotkhamsuckhoe>();//Không có dữ liệu thì trả về sanh sách rỗng
             }
 
         }
@@ -180,7 +175,7 @@ namespace benhxaCA.Database
                         SqlDataReader r = cmd.ExecuteReader();
                         while (r.Read())
                         {
-                            thongtincanbo ttcb = new thongtincanbo();
+                            thongtincanbo ttcb = new thongtincanbo(); //Tạo object để chứa từng Row dữ liệu khi foreach
                             ttcb.ttcb_id = r[0].ToString();
                             ttcb.ttcb_madv = r[1].ToString();
                             ttcb.ttcb_macv = r[2].ToString();
@@ -194,15 +189,14 @@ namespace benhxaCA.Database
                             ttcb.ttcb_dantoc = r[10].ToString();
                             ttcb.ttcb_sodienthoai = r[11].ToString();
                             ttcb.ttcb_hinhanh = r[12].ToString();
-                            dscb.Add(ttcb);
+                            dscb.Add(ttcb);//Thêm dữ liệu vào danh sách dscb từ object
                         }
                     }
                     CloseConnection(); // Đóng kết nối với SQL Server
                 }
                 else
                 {
-                    //Không có dữ liệu thì trả về danh sách rỗng
-                    return new List<thongtincanbo>();
+                    return new List<thongtincanbo>(); //Không có dữ liệu thì trả về danh sách rỗng
                 }
             }
             catch (Exception)
@@ -248,7 +242,7 @@ namespace benhxaCA.Database
                     SqlDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        thongtincanbo ttcb = new thongtincanbo();
+                        thongtincanbo ttcb = new thongtincanbo(); //Tạo object để chứa từng Row dữ liệu khi foreach
                         ttcb.ttcb_id = r[0].ToString();
                         ttcb.ttcb_madv = r[1].ToString();
                         ttcb.ttcb_macv = r[2].ToString();
@@ -262,7 +256,7 @@ namespace benhxaCA.Database
                         ttcb.ttcb_dantoc = r[10].ToString();
                         ttcb.ttcb_sodienthoai = r[11].ToString();
                         ttcb.ttcb_hinhanh = r[12].ToString();
-                        cb.Add(ttcb);
+                        cb.Add(ttcb); //Thêm dữ liệu vào danh sách cb từ object
                     }
                     CloseConnection(); // Đóng kết nối với SQL Server
                 }
@@ -332,7 +326,7 @@ namespace benhxaCA.Database
             }
         }
         //Lấy ra thông tin khám sức khỏe tổng hợp của cán bộ
-        public DataSet Get_tong_hop(string macb)
+        public DataSet Get_tong_hop(string macb,string loaikham,string ngaykham)
         {
 
             if (OpenConnection() && !macb.Equals(string.Empty))
@@ -346,6 +340,22 @@ namespace benhxaCA.Database
                         ParameterName = "@macb",
                         SqlDbType = SqlDbType.NVarChar,
                         Value = macb
+                    }
+                );
+                cmd.Parameters.Add(
+                    new SqlParameter()
+                    {
+                        ParameterName = "@loaikham",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = loaikham
+                    }
+                );
+                cmd.Parameters.Add(
+                    new SqlParameter()
+                    {
+                        ParameterName = "@ngaykham",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = ngaykham
                     }
                 );
                 SqlDataAdapter adpt = new SqlDataAdapter(cmd);
@@ -382,7 +392,7 @@ namespace benhxaCA.Database
                     SqlDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        thongtincanbo ttcb = new thongtincanbo(); // //Tạo object để chứa từng Row dữ liệu khi foreach
+                        thongtincanbo ttcb = new thongtincanbo(); //Tạo object để chứa từng Row dữ liệu khi foreach
                         ttcb.ttcb_id = r[0].ToString();
                         ttcb.ttcb_madv = r[1].ToString();
                         ttcb.ttcb_macv = r[2].ToString();

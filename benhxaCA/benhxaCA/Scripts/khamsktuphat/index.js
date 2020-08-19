@@ -67,11 +67,12 @@
                 event.preventDefault();
                 var btn = $(this);
                 var id = btn.data('macb');
-                var trangthai = $(".trangthaikham:checked").val();
+                var ngaykham = $("#ngaykhamsuckhoe").val();
                 var formdata = new FormData();
                 formdata.append("macb", id);
+                formdata.append("ngay", ngaykham);
                 $.ajax({
-                    url: '/khamsuckhoetheodoan/GetKhamBenhReport',
+                    url: '/khamsktuphat/GetKhamBenhReport',
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -96,7 +97,7 @@
                 var formdata = new FormData();
                 formdata.append("macb", id);
                 $.ajax({
-                    url: '/khamsuckhoetheodoan/GetThongTinReport',
+                    url: '/khamsktuphat/GetThongTinReport',
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

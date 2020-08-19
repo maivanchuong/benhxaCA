@@ -52,12 +52,13 @@ namespace benhxaCA.Controllers
         public JsonResult GetKhamBenhReport()
         {
             string macb = Request.Form["macb"];
+            string ngay = Request.Form["ngay"];
             if (macb != "")
             {
                 ReportParams objectReportParams = new ReportParams();
-                DataSet data = GetInfo(macb);
+                DataSet data = GetInfo(macb,ngay);
                 objectReportParams.DataSource = data.Tables[0];
-                objectReportParams.ReportTitle = "Báo cáo khám bệnh";
+                objectReportParams.ReportTitle = "Phiếu khám sức khỏe";
                 objectReportParams.ReportType = "KhamBenhReport";
                 objectReportParams.RptFileName = "KhamBenhReport.rdlc";
                 objectReportParams.DataSetName = "KhamBenhReport";
@@ -69,12 +70,13 @@ namespace benhxaCA.Controllers
             }
         }
         //Lấy data cho báo cáo đổ vào Dataset
-        public DataSet GetInfo(string macb)
+        public DataSet GetInfo(string macb,string ngaykham)
         {
+            string loaikham = "Khám sức khỏe định kỳ";
             DatabaseHelper db = new DatabaseHelper();
             db.OpenConnection();
             DataSet ds = new DataSet();
-            ds=db.Get_tong_hop(macb);
+            ds=db.Get_tong_hop(macb,loaikham,ngaykham);
             db.CloseConnection();
             return ds;
         }
